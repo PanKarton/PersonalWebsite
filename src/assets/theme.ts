@@ -5,6 +5,7 @@ export const theme = {
     // White
     contrast: '#FFFFFF',
     contrastDarker: '#E0E2EA',
+    contrastDarkerHover: '#f5f6f8',
     // Orange
     accentPrimary: '#FFB969',
   },
