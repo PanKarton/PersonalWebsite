@@ -6,15 +6,17 @@ import { HelloSection } from '@/modules/HelloSection/HelloSection';
 import { MyProjectsSection } from '@/modules/MyProjectsSection/MyPRojectsSection';
 import { SkillsSection } from '@/modules/SkillsSection/SkillsSection';
 
-const Page = () => (
-  <>
-    <Nav />
-    <HelloSection />
-    <AboutMeSection />
-    <SkillsSection />
-    <MyProjectsSection />
-    <ContactMeSection />
-  </>
-);
+const Page = () => {
+  return (
+    <>
+      <Nav className={true ? 'isActive' : ''} />
+      <HelloSection />
+      <AboutMeSection />
+      <SkillsSection />
+      <MyProjectsSection />
+      <ContactMeSection />
+    </>
+  );
+};
 
 export default Page;

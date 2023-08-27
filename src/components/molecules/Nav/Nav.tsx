@@ -1,8 +1,8 @@
 import { NavLink } from '@/components/atoms/NavLink/NavLink';
 import { StyledList, StyledNav } from './Nav.styles';
 
-export const Nav = () => (
-  <StyledNav>
+export const Nav = ({ className }: { className: string }) => (
+  <StyledNav className={className}>
     <StyledList>
       <li>
         <NavLink href="#hello" isActive={true}>
