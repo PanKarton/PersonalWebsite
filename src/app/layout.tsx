@@ -1,7 +1,7 @@
 import { GlobalStyles } from '@/assets/globalStyles';
 import StyledComponentsRegistry from '@/lib/registry';
 import { AppProvider } from '@/providers/AppProvider';
-import { Courier_Prime } from '@next/font/google';
+import { Courier_Prime } from 'next/font/google';
 
 const courierPrime = Courier_Prime({
   weight: '400',

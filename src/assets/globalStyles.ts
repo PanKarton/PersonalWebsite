@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     html {
   box-sizing: border-box;
   font-family: var(--open-sans);
+  scroll-behavior:smooth;
 }
 
 *,
