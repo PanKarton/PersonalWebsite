@@ -2,8 +2,44 @@ import { MainPageSection } from '@/components/molecules/MainPageSection/MainPage
 import Image from 'next/image';
 import styled from 'styled-components';
 import dotsSquare from 'public/images/dot-square.svg';
+import heroImg from 'public/images/hero-img.png';
+import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
 
-const ImageWrapper = styled.div`
+const HeroWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 5vh, 3rem);
+
+  padding-inline: 2rem;
+`;
+
+const HeroTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    color: ${({ theme }) => theme.color.contrast};
+    font-size: ${({ theme }) => theme.fontSize.textXL};
+    &.big {
+      font-size: ${({ theme }) => theme.fontSize.text2XL};
+    }
+  }
+`;
+
+const HeroImgWrapper = styled.div`
+  position: relative;
+  width: min(75vw, 25rem);
+  aspect-ratio: 1.2;
+`;
+
+const DotSquareImageWrapper = styled.div`
   display: none;
   position: absolute;
   top: 3rem;
@@ -18,13 +54,20 @@ const ImageWrapper = styled.div`
 export const HelloSection = () => {
   return (
     <MainPageSection id="hello">
-      <p>Hi, my name is</p>
-      <h2>Arkadiusz Piersiak</h2>
-      <p>I’m home made frontend developer</p>
+      <HeroWrapper>
+        <HeroTextWrapper>
+          <p>Hi, my name is</p>
+          <SectionHeading>Arkadiusz Piersiak</SectionHeading>
+          <p className="big">I’m home made frontend developer</p>
+        </HeroTextWrapper>
 
-      <ImageWrapper>
+        <HeroImgWrapper>
+          <Image src={heroImg} alt="box image bade of dots" fill />
+        </HeroImgWrapper>
+      </HeroWrapper>
+      <DotSquareImageWrapper>
         <Image src={dotsSquare} alt="square made of dots" fill />
-      </ImageWrapper>
+      </DotSquareImageWrapper>
     </MainPageSection>
   );
 };

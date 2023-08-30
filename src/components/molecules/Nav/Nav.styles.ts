@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const StyledNav = styled.nav`
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   translate: 100% 0;
-  transition: translate ease-in-out 500ms;
+  /* transition: translate ease-in-out 500ms; */
 
   &.isActive {
     translate: 0 0;

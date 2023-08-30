@@ -6,9 +6,9 @@ import { SlickWrapper } from '@/modules/MainPage/SlickWrapper/SlickWrapper';
 const Page = () => {
   return (
     <>
-      <Nav className={true ? 'isActive' : ''} />
-      <SideAnchors activeSection="#hello" />
       <SlickWrapper />
+      <Nav />
+      <SideAnchors activeSection="#hello" />
     </>
   );
 };
