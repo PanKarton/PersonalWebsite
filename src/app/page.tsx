@@ -1,20 +1,12 @@
 'use client';
 import { Nav } from '@/components/molecules/Nav/Nav';
-import { AboutMeSection } from '@/modules/AboutMeSection/AboutMeSection';
-import { ContactMeSection } from '@/modules/ContactMeSection/ContactMeSection';
-import { HelloSection } from '@/modules/HelloSection/HelloSection';
-import { MyProjectsSection } from '@/modules/MyProjectsSection/MyPRojectsSection';
-import { SkillsSection } from '@/modules/SkillsSection/SkillsSection';
+import { SlickWrapper } from '@/modules/MainPage/SlickWrapper/SlickWrapper';
 
 const Page = () => {
   return (
     <>
       <Nav className={true ? 'isActive' : ''} />
-      <HelloSection />
-      <AboutMeSection />
-      <SkillsSection />
-      <MyProjectsSection />
-      <ContactMeSection />
+      <SlickWrapper />
     </>
   );
 };

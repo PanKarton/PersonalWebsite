@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <AppProvider>
       <html>
-        <body className={courierPrime.className}>
+        <body suppressHydrationWarning={true} className={courierPrime.className}>
           <StyledComponentsRegistry>
             <GlobalStyles />
             {children}
