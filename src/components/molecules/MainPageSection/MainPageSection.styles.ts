@@ -7,15 +7,15 @@ export const StyledSection = styled.section`
   justify-content: center;
   .max-width-wrapper {
     position: relative;
-    border-inline: 1px solid red;
+    /* border-inline: 1px solid red; */
 
     width: 100%;
 
-    @media screen and (min-width: 420px) {
-      max-width: 420px;
+    @media screen and (min-width: 26.25rem) {
+      max-width: 26.25rem;
     }
     @media screen and (min-width: 56.25rem) {
-      max-width: 51.25rem;
+      max-width: calc(100vw - 10rem);
     }
     @media screen and (min-width: 87.5rem) {
       max-width: 87.5rem;

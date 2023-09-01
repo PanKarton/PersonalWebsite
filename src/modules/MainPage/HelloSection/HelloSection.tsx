@@ -25,6 +25,10 @@ const HeroWrapper = styled.div`
     width: 100%;
     justify-content: flex-start;
   }
+
+  @media screen and (min-width: 87.5rem) {
+    margin-left: 2rem;
+  }
 `;
 
 const HeroTextWrapper = styled.div`

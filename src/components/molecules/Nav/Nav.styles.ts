@@ -13,7 +13,7 @@ export const StyledNav = styled.nav`
     translate: 0 0;
   }
 
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 87.5rem) {
     translate: 0 0;
     padding-block: 3rem;
     height: auto;

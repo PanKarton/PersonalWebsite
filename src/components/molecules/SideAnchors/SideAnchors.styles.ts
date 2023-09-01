@@ -31,6 +31,16 @@ export const StyledList = styled.ul`
 
     transition: all 250ms ease-in-out;
   }
+
+  @media screen and (min-width: 56.25rem) {
+    left: -0.125rem;
+    bottom: 50%;
+
+    translate: -50% 0;
+    transform-origin: 50% 100%;
+
+    rotate: 90deg;
+  }
 `;
 
 export const StyledAnchor = styled.a`
