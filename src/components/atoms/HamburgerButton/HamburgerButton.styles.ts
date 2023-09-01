@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Props as HamburgerProps } from './HamburgerButton';
 
-export const StyledBurger = styled.button<HamburgerProps>`
+export const StyledBurger = styled.button`
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -17,8 +16,8 @@ export const StyledBurger = styled.button<HamburgerProps>`
   padding: 0;
   z-index: 1;
 
-  @media screen and (min-width: 43.75rem) {
-    top: 50%;
+  @media screen and (min-width: 56.25rem) {
+    display: none;
     z-index: 10;
   }
 
@@ -32,18 +31,25 @@ export const StyledBurger = styled.button<HamburgerProps>`
     transform-origin: 0.0625rem;
     transition: all 0.125s linear;
 
-    :first-child {
-      rotate: ${({ isActive }) => (isActive ? '45deg' : '0')};
-    }
-
     :nth-child(2) {
-      opacity: ${({ isActive }) => (isActive ? '0' : '1')};
-      translate: ${({ isActive }) => (isActive ? '25% 0' : '')};
-      scale: ${({ isActive }) => (isActive ? '0 1' : '1 1')};
+      opacity: 1;
+      scale: 1 1;
+    }
+  }
+
+  &.active {
+    span:first-child {
+      rotate: 47deg;
     }
 
-    :nth-child(3) {
-      rotate: ${({ isActive }) => (isActive ? '-45deg' : '0')};
+    span:nth-child(2) {
+      opacity: 0;
+      translate: 25% 0;
+      scale: 0 1;
+    }
+
+    span:nth-child(3) {
+      rotate: -47deg;
     }
   }
 `;
