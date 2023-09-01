@@ -1,26 +1,18 @@
+import { HamburgerButton } from '@/components/atoms/HamburgerButton/HamburgerButton';
 import { NavLink } from '@/components/atoms/NavLink/NavLink';
 import { useState } from 'react';
-import styled from 'styled-components';
 import { StyledList, StyledNav } from './Nav.styles';
 
-const StyledButton = styled.div`
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  color: white;
-  font-size: 2rem;
-  z-index: 9999;
-`;
-
 export const Nav = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isActive, setisActive] = useState(false);
+  console.log(isActive);
 
-  const handleToggleNavMenu = () => setIsVisible(prev => !prev);
+  const handleToggleNavMenu = () => setisActive(prev => !prev);
 
   return (
     <>
-      <StyledButton onClick={handleToggleNavMenu}>X</StyledButton>
-      <StyledNav className={isVisible ? 'isActive' : ''}>
+      <HamburgerButton isActive={isActive} onClick={handleToggleNavMenu} />
+      <StyledNav className={isActive ? 'isActive' : ''}>
         <StyledList>
           <li>
             <NavLink href="#hello" isActive={true}>

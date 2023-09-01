@@ -15,8 +15,16 @@ const HeroWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: clamp(2rem, 5vh, 3rem);
-
   padding-inline: 2rem;
+
+  @media screen and (min-width: 30.25rem) {
+    padding-inline: 0rem;
+  }
+  @media screen and (min-width: 56.25rem) {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+  }
 `;
 
 const HeroTextWrapper = styled.div`
@@ -31,12 +39,33 @@ const HeroTextWrapper = styled.div`
       font-size: ${({ theme }) => theme.fontSize.text2XL};
     }
   }
+
+  @media screen and (min-width: 56.25rem) {
+    max-width: 25rem;
+  }
+
+  @media screen and (min-width: 87.5rem) {
+    p {
+      color: ${({ theme }) => theme.color.contrast};
+      font-size: ${({ theme }) => theme.fontSize.text2XL};
+      &.big {
+        font-size: ${({ theme }) => theme.fontSize.text3XL};
+      }
+    }
+  }
 `;
 
 const HeroImgWrapper = styled.div`
   position: relative;
   width: min(75vw, 25rem);
   aspect-ratio: 1.2;
+  @media screen and (min-width: 56.25rem) {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+    width: min(300vw, 27rem);
+  }
 `;
 
 const DotSquareImageWrapper = styled.div`
