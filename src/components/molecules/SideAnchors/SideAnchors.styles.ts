@@ -32,8 +32,8 @@ export const StyledList = styled.ul`
     transition: all 250ms ease-in-out;
   }
 
-  @media screen and (min-width: 56.25rem) {
-    left: -0.125rem;
+  @media screen and (min-width: 37.5rem) {
+    left: 2rem;
     bottom: 50%;
 
     translate: -50% 0;

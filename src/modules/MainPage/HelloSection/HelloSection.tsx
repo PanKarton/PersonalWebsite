@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import dotsSquare from 'public/images/dot-square.svg';
 import heroImg from 'public/images/hero-img.png';
 import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
+import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
+import { DottedLine } from '@/modules/MainPage/DottedLine/DottedLine';
+import { GitHubLink } from '../GitHubLink/GitHubLink';
 
 const HeroWrapper = styled.div`
   position: absolute;
@@ -20,9 +23,10 @@ const HeroWrapper = styled.div`
   @media screen and (min-width: 30.25rem) {
     padding-inline: 0rem;
   }
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 50rem) {
     flex-direction: row;
     width: 100%;
+    height: 100%;
     justify-content: flex-start;
   }
 
@@ -34,7 +38,7 @@ const HeroWrapper = styled.div`
 const HeroTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 
   p {
     color: ${({ theme }) => theme.color.contrast};
@@ -44,8 +48,11 @@ const HeroTextWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 50rem) {
     max-width: 25rem;
+    position: absolute;
+    bottom: 15dvh;
+    left: 0;
   }
 
   @media screen and (min-width: 87.5rem) {
@@ -63,12 +70,12 @@ const HeroImgWrapper = styled.div`
   position: relative;
   width: min(75vw, 25rem);
   aspect-ratio: 1.2;
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 50rem) {
+    display: none;
     position: absolute;
     right: 0;
-    top: 50%;
-    translate: 0 -50%;
-    width: min(300vw, 27rem);
+    top: 10%;
+    width: 50vw;
   }
 `;
 
@@ -86,21 +93,26 @@ const DotSquareImageWrapper = styled.div`
 
 export const HelloSection = () => {
   return (
-    <MainPageSection id="hello">
-      <HeroWrapper>
-        <HeroTextWrapper>
-          <p>Hi, my name is</p>
-          <SectionHeading>Arkadiusz Piersiak</SectionHeading>
-          <p className="big">I’m home made frontend developer</p>
-        </HeroTextWrapper>
+    <div style={{ position: 'relative' }}>
+      <MainPageSection id="hello">
+        <HeroWrapper>
+          <HeroTextWrapper>
+            <p>Hi, my name is</p>
+            <SectionHeading>Arkadiusz Piersiak</SectionHeading>
+            <DoubleLineDivider />
+            <p className="big">I’m home made frontend developer</p>
+          </HeroTextWrapper>
 
-        <HeroImgWrapper>
-          <Image src={heroImg} alt="box image bade of dots" fill />
-        </HeroImgWrapper>
-      </HeroWrapper>
-      <DotSquareImageWrapper>
-        <Image src={dotsSquare} alt="square made of dots" fill />
-      </DotSquareImageWrapper>
-    </MainPageSection>
+          <HeroImgWrapper>
+            <Image src={heroImg} alt="box image bade of dots" fill />
+          </HeroImgWrapper>
+        </HeroWrapper>
+        <DotSquareImageWrapper>
+          <Image src={dotsSquare} alt="square made of dots" fill />
+        </DotSquareImageWrapper>
+      </MainPageSection>
+      <GitHubLink />
+      <DottedLine />
+    </div>
   );
 };
