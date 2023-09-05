@@ -29,7 +29,7 @@ export const StyledList = styled.ul`
   background-color: ${({ theme }) => theme.color.primary};
   gap: 1rem;
 
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 87.5rem) {
     gap: 4rem;
     flex-direction: row;
     height: auto;

@@ -7,7 +7,6 @@ export const StyledSection = styled.section`
   justify-content: center;
   .max-width-wrapper {
     position: relative;
-    /* border-inline: 1px solid red; */
 
     width: 100%;
 
@@ -17,7 +16,7 @@ export const StyledSection = styled.section`
     @media screen and (min-width: 50rem) {
       max-width: calc(100vw - 15rem);
     }
-    @media screen and (min-width: 87.5rem) {
+    @media screen and (min-width: 100rem) {
       max-width: 87.5rem;
     }
   }

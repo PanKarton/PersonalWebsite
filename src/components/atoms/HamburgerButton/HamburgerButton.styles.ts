@@ -21,7 +21,7 @@ export const StyledBurger = styled.button`
     right: 2rem;
   }
 
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 87.5rem) {
     display: none;
     z-index: 10;
   }

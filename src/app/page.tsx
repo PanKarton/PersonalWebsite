@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <>
       <SlickWrapper />
-      <Nav />
       <SideAnchors activeSection="#hello" />
+      <Nav />
       <MainLogo />
     </>
   );

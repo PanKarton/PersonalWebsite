@@ -8,7 +8,6 @@ export const StyledList = styled.ul`
   left: 50%;
   bottom: 0;
   translate: -50% 0;
-  /* border: 1px solid red; */
 
   display: flex;
   flex-direction: row;

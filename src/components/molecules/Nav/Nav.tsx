@@ -5,7 +5,6 @@ import { StyledList, StyledNav } from './Nav.styles';
 
 export const Nav = () => {
   const [isActive, setisActive] = useState(false);
-  console.log(isActive);
 
   const handleToggleNavMenu = () => setisActive(prev => !prev);
 
