@@ -3,35 +3,47 @@ import styled from 'styled-components';
 export const StyledList = styled.ul`
   position: fixed;
 
-  width: 3.5rem;
-  left: 2rem;
-  top: 50%;
-  translate: 0 -50%;
+  height: 3.5rem;
+
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
 
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: center;
-  row-gap: 40px;
+  column-gap: 40px;
 
   li {
-    height: 0.1875rem;
+    width: 0.1875rem;
+    height: 1.5rem;
     background-color: ${({ theme }) => theme.color.contrast};
-    width: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0.125rem;
     &.active {
-      scale: 2 1;
-      translate: 50% 0;
+      scale: 1 2;
+      translate: 0 -50%;
     }
 
     transition: all 250ms ease-in-out;
+  }
+
+  @media screen and (min-width: 37.5rem) {
+    left: 2rem;
+    bottom: 50%;
+
+    translate: -50% 0;
+    transform-origin: 50% 100%;
+
+    rotate: 90deg;
   }
 `;
 
 export const StyledAnchor = styled.a`
   display: block;
-  height: 1rem;
-  width: 2rem;
+  height: 2rem;
+  width: 1rem;
 `;
