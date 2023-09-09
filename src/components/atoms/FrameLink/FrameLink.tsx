@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const FrameLink = styled(Link)`
   position: relative;
   border: 0.0625rem solid ${({ theme }) => theme.color.accentPrimary};
-  padding: 1rem 0;
+  padding: 0.75rem 2rem;
   background-color: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.contrast};
   text-align: center;
@@ -24,5 +24,9 @@ export const FrameLink = styled(Link)`
 
   &:hover::after {
     translate: -0.25rem 0.25rem;
+  }
+
+  @media screen and (min-width: 25rem) {
+    width: 14rem;
   }
 `;
