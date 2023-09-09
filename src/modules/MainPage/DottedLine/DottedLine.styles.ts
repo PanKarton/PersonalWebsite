@@ -8,7 +8,7 @@ export const StyledWrapper = styled.div`
   justify-content: flex-end;
   gap: 1.75rem;
   @media screen and (min-width: 37.5rem) {
-    position: absolute;
+    position: fixed;
   }
 `;
 
