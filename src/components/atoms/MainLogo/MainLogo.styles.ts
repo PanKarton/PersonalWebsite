@@ -32,7 +32,6 @@ export const StyledH1 = styled.h1`
   }
 
   @media screen and (min-width: 87.5rem) {
-    position: absolute;
     top: 2.25rem;
     font-size: ${({ theme }) => theme.fontSize.text3XL};
   }

@@ -2,12 +2,12 @@ import { MainPageSection } from '@/components/molecules/MainPageSection/MainPage
 import Image from 'next/image';
 import dotsSquare from 'public/images/dot-square.svg';
 import heroImg from 'public/images/hero-img.png';
-import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
 import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
 import { DottedLine } from '@/modules/MainPage/DottedLine/DottedLine';
 import { GitHubLink } from '../GitHubLink/GitHubLink';
 import {
   DotSquareImageWrapper,
+  HeroHeading,
   HeroImgWrapper,
   HeroTextWrapper,
   HeroWrapper,
@@ -20,7 +20,7 @@ export const HelloSection = () => {
         <HeroWrapper>
           <HeroTextWrapper>
             <p>Hi, my name is</p>
-            <SectionHeading>Arkadiusz Piersiak</SectionHeading>
+            <HeroHeading>Arkadiusz Piersiak</HeroHeading>
             <DoubleLineDivider />
             <p className="big">I’m home made frontend developer</p>
           </HeroTextWrapper>
