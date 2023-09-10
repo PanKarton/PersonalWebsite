@@ -13,7 +13,7 @@ export const StyledList = styled.ul`
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
-  column-gap: 40px;
+  column-gap: 2.5rem;
 
   li {
     width: 0.1875rem;

@@ -3,8 +3,6 @@ import Image from 'next/image';
 import dotsSquare from 'public/images/dot-square.svg';
 import heroImg from 'public/images/hero-img.png';
 import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
-import { DottedLine } from '@/modules/MainPage/DottedLine/DottedLine';
-import { GitHubLink } from '../GitHubLink/GitHubLink';
 import {
   DotSquareImageWrapper,
   HeroHeading,
@@ -33,8 +31,6 @@ export const HelloSection = () => {
       <DotSquareImageWrapper>
         <Image src={dotsSquare} alt="square made of dots" fill />
       </DotSquareImageWrapper>
-      <GitHubLink />
-      <DottedLine />
     </div>
   );
 };

@@ -22,5 +22,6 @@ export const theme = {
     text6XL: '3.75rem',
     text7XL: '4.5rem',
     text8XL: '6.25rem',
+    text9XL: '8.75rem',
   },
 };

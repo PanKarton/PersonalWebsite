@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0rem;
   right: clamp(2rem, 4vw, 4rem);
   display: flex;

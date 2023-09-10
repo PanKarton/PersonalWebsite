@@ -5,6 +5,7 @@ export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.color.primary};
   display: flex;
   justify-content: center;
+  border-block: 1px solid wheat;
   .max-width-wrapper {
     position: relative;
 

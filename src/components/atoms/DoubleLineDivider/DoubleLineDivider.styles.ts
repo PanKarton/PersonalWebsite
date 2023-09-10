@@ -10,7 +10,7 @@ export const StyledWrapper = styled.div`
     background-color: ${({ theme }) => theme.color.accentPrimary};
     border-radius: 0.25rem;
     width: 4rem;
-    height: 3px;
+    height: 0.1875rem;
     position: absolute;
   }
   span:first-child {

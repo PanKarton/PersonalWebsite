@@ -10,7 +10,6 @@ export const HeroWrapper = styled.div`
   align-items: center;
   gap: clamp(2rem, 5vh, 3rem);
   padding-inline: 2rem;
-  /* border: 1px solid red; */
 
   @media screen and (min-width: 30.25rem) {
     padding-inline: 0rem;
