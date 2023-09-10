@@ -8,4 +8,7 @@ export const SectionParagraph = styled.p`
   @media screen and (min-width: 25rem) {
     font-size: ${({ theme }) => theme.fontSize.textXL};
   }
+  @media screen and (min-width: 50rem) {
+    max-width: 22rem;
+  }
 `;
