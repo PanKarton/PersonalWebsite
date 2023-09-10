@@ -11,7 +11,7 @@ export const FlexWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  padding: 5rem 0 0 1rem;
+  padding: 5rem 0 7rem 1rem;
 
   @media screen and (min-width: 50rem) {
     justify-content: flex-start;
@@ -26,8 +26,21 @@ export const StyledHeadingWrapper = styled.div`
 
 export const SkillsWrapper = styled.div`
   border: 1px solid red;
-  height: 80vw;
+  height: 100%;
   width: calc(100% - 1rem);
+`;
+
+export const TilesList = styled.ul`
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+`;
+
+export const SkillTile = styled.div`
+  background-color: ${({ theme }) => theme.color.accentPrimary};
+  width: 120px;
+  height: 80px;
+  flex-shrink: 0;
 `;
 
 export const SkillsSection = () => (
@@ -38,7 +51,19 @@ export const SkillsSection = () => (
         <SectionParagraph>I’m most familiar with these - more being added </SectionParagraph>
       </StyledHeadingWrapper>
 
-      <SkillsWrapper></SkillsWrapper>
+      <SkillsWrapper>
+        <TilesList>
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+          <SkillTile />
+        </TilesList>
+      </SkillsWrapper>
     </FlexWrapper>
   </MainPageSection>
 );
