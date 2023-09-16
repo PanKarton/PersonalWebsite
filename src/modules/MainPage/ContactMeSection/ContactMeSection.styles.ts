@@ -10,11 +10,28 @@ export const FlexWrapper = styled.div`
 
   .form-wrapper {
     border: 1px solid red;
-    height: 50vh;
 
     position: absolute;
-    inset: 0;
+    height: 70vh;
+    width: 100%;
     translate: 100% 0;
+    background-color: ${({ theme }) => theme.color.primary};
+    transition: 0.125s translate ease-in;
+
+    &.isVisible {
+      translate: 0 0;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: ${({ theme }) => theme.color.primary};
+      border: none;
+
+      color: ${({ theme }) => theme.color.contrast};
+      font-size: 1.5rem;
+    }
   }
 
   @media screen and (min-width: 50rem) {
@@ -73,9 +90,22 @@ export const IconsWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
+    a {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
     &.icon--envelope {
       width: 2.25rem;
       margin-left: auto;
+
+      button {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
       svg {
         color: white;
         width: 100%;

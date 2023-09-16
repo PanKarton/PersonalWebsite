@@ -1,9 +1,13 @@
-export const ContactForm = () => (
-  <form>
-    <input type="text" placeholder="name" />
-    <input type="text" placeholder="email" />
-    <input type="text" placeholder="message" />
+import { ContactFormInput } from '../ContactFormInput/ContactFormInput';
+import { ContactFormTextArea } from '../ContactFormTextArea/ContactFormTextArea';
+import { StyledButton, StyledForm } from './ContactForm.styles';
 
-    <button>Send</button>
-  </form>
+export const ContactForm = () => (
+  <StyledForm>
+    <ContactFormInput type="text" label="name" />
+    <ContactFormInput type="email" label="email" />
+    <ContactFormTextArea label="message" />
+
+    <StyledButton>Send</StyledButton>
+  </StyledForm>
 );
