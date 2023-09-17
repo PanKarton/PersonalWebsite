@@ -1,6 +1,7 @@
 export const theme = {
   color: {
     primary: '#323239',
+    primarySlightlyLighter: '#3b3b44',
     primaryLighter: '#76777B',
     // White
     contrast: '#FFFFFF',
@@ -8,7 +9,6 @@ export const theme = {
     contrastDarkerHover: '#f5f6f8',
     // Orange
     accentPrimary: '#FFB969',
-    accentPrimaryDarker: '#ff7a69',
   },
   fontSize: {
     textXS: '0.75rem',

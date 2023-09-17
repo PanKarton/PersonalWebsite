@@ -3,7 +3,6 @@ import Image from 'next/image';
 import linkedInIcon from 'public/images/linkedin-icon.svg';
 import gitHub from 'public/images/gh-icon-white.svg';
 import { BsEnvelope } from 'react-icons/bs';
-import { AiOutlineClose } from 'react-icons/ai';
 import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
 import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
 import { SectionParagraph } from '@/components/atoms/SectionParagraph/SectionParagraph';
@@ -46,12 +45,7 @@ export const ContactMeSection = () => {
           </IconsWrapper>
         </StyledWrapper>
 
-        <div className={`form-wrapper ${isContactFormVisible ? 'isVisible' : ''}`}>
-          <ContactForm />
-          <button className="close-button" onClick={handleToggleContactForm}>
-            <AiOutlineClose />
-          </button>
-        </div>
+        <ContactForm handleClose={handleToggleContactForm} isOpen={isContactFormVisible} />
       </FlexWrapper>
     </MainPageSection>
   );

@@ -3,9 +3,10 @@ import { StyledLabel, StyledTextArea, StyledWrapper } from './ContactFormTextAre
 
 type ContactFormInput = {
   label: string;
+  id: string;
 };
 
-export const ContactFormTextArea = ({ label }: ContactFormInput) => {
+export const ContactFormTextArea = ({ label, id }: ContactFormInput) => {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -24,8 +25,11 @@ export const ContactFormTextArea = ({ label }: ContactFormInput) => {
 
   return (
     <StyledWrapper>
-      <StyledLabel className={isFocused ? 'label-float' : ''}>{label}</StyledLabel>
+      <StyledLabel htmlFor={id} className={isFocused ? 'label-float' : ''}>
+        {label}
+      </StyledLabel>
       <StyledTextArea
+        id={id}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onChange={handleChange}

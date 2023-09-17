@@ -16,7 +16,7 @@ export const StyledLabel = styled.label`
   &.label-float {
     font-size: 0.75rem;
     left: 0;
-    top: -0.125rem;
+    top: -0.5rem;
     color: ${({ theme }) => theme.color.contrastDarker};
   }
 `;
@@ -25,14 +25,15 @@ export const StyledInput = styled.input`
   width: 100%;
   background-color: ${({ theme }) => theme.color.primary};
   border: none;
-  border-bottom: 0.0625rem solid ${({ theme }) => theme.color.accentPrimary};
+  border-bottom: 0.125rem solid ${({ theme }) => theme.color.accentPrimary};
   padding-block: 0.25rem;
   color: ${({ theme }) => theme.color.contrast};
   font-size: 1.25rem;
+  padding-left: 0.5rem;
 
   transition: all 0.25s ease;
   &:focus {
     outline: none;
-    border-color: ${({ theme }) => theme.color.accentPrimaryDarker};
+    border-color: ${({ theme }) => theme.color.contrast};
   }
 `;

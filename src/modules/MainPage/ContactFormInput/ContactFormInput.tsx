@@ -4,9 +4,10 @@ import { StyledInput, StyledLabel, StyledWrapper } from './ContactFormInput.styl
 type ContactFormInput = {
   label: string;
   type: 'text' | 'email';
+  id: string;
 };
 
-export const ContactFormInput = ({ label, type }: ContactFormInput) => {
+export const ContactFormInput = ({ label, type, id }: ContactFormInput) => {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -25,8 +26,11 @@ export const ContactFormInput = ({ label, type }: ContactFormInput) => {
 
   return (
     <StyledWrapper>
-      <StyledLabel className={isFocused ? 'label-float' : ''}>{label}</StyledLabel>
+      <StyledLabel htmlFor={id} className={isFocused ? 'label-float' : ''}>
+        {label}
+      </StyledLabel>
       <StyledInput
+        id={id}
         type={type}
         onFocus={handleFocus}
         onBlur={handleBlur}

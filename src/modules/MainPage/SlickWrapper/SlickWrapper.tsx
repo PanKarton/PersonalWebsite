@@ -7,10 +7,10 @@ import { SkillsSection } from '@/modules/MainPage/SkillsSection/SkillsSection';
 export const SlickWrapper = () => {
   return (
     <div>
-      <HelloSection />
-      <AboutMeSection />
-      <SkillsSection />
-      <MyProjectsSection />
+      {/* <HelloSection /> */}
+      {/* <AboutMeSection /> */}
+      {/* <SkillsSection /> */}
+      {/* <MyProjectsSection /> */}
       <ContactMeSection />
     </div>
   );

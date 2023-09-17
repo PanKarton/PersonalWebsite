@@ -1,20 +1,41 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.form`
+export const StyledFormWrapper = styled.form`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-block: 2rem;
-  padding-inline: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${({ theme }) => theme.color.primary};
 `;
 
-export const StyledButton = styled.button`
+export const StyledForm = styled.form`
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* border-top: 1px solid ${({ theme }) => theme.color.accentPrimary}; */
+
+  padding-block: 3rem 2.5rem;
+  padding-inline: 0.75rem;
+`;
+
+export const StyledSubmit = styled.button`
   position: relative;
   border: 0.0625rem solid ${({ theme }) => theme.color.accentPrimary};
   padding: 0.75rem 2rem;
   background-color: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.contrast};
   text-align: center;
+  width: 10rem;
+  margin-left: auto;
 
   &::after {
     content: '';
@@ -48,5 +69,20 @@ export const StyledButton = styled.button`
     &::after {
       translate: 0.375rem -0.375rem;
     }
+  }
+`;
+
+export const StyledCloseButton = styled.button`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: ${({ theme }) => theme.color.primary};
+  border: none;
+
+  color: ${({ theme }) => theme.color.contrast};
+  font-size: 1.5rem;
+
+  @media screen and (min-width: 50rem) {
+    display: none;
   }
 `;
