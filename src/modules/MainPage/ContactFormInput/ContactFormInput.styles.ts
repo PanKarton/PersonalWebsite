@@ -36,4 +36,13 @@ export const StyledInput = styled.input`
     outline: none;
     border-color: ${({ theme }) => theme.color.contrast};
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    box-shadow: inset 0 0 20px 20px ${({ theme }) => theme.color.primary};
+  }
 `;

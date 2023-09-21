@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledFormWrapper = styled.form`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +10,12 @@ export const StyledFormWrapper = styled.form`
 
 export const StyledForm = styled.form`
   height: 100%;
-  width: 100%;
+  width: min(100%, 24rem);
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
-  /* border-top: 1px solid ${({ theme }) => theme.color.accentPrimary}; */
 
   padding-block: 3rem 2.5rem;
   padding-inline: 0.75rem;

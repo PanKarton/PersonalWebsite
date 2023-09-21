@@ -24,8 +24,6 @@ export const StyledWrapper = styled.div`
   }
 
   @media screen and (min-width: 37.5rem) {
-    bottom: 4.75rem;
-
     .icon-wrapper {
       width: 2.25rem;
       top: -3.25rem;

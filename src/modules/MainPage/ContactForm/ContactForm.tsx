@@ -9,7 +9,6 @@ import {
   StyledCloseButton,
   StyledFormWrapper,
 } from './ContactForm.styles';
-import { createPortal } from 'react-dom';
 
 type ContactFormProps = {
   handleClose: () => void;
@@ -17,9 +16,7 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ handleClose, isOpen }: ContactFormProps) => {
-  if (!isOpen) return null;
-
-  return createPortal(
+  return (
     <StyledFormWrapper>
       <StyledForm>
         <ContactFormInput type="email" label="Your email" id="email" />
@@ -30,7 +27,6 @@ export const ContactForm = ({ handleClose, isOpen }: ContactFormProps) => {
           <AiOutlineClose />
         </StyledCloseButton>
       </StyledForm>
-    </StyledFormWrapper>,
-    document.body
+    </StyledFormWrapper>
   );
 };
