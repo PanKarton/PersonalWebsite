@@ -4,12 +4,11 @@ import { HelloSection } from '@/modules/MainPage/HelloSection/HelloSection';
 import { MyProjectsSection } from '@/modules/MainPage/MyProjectsSection/MyProjectsSection';
 import { SkillsSection } from '@/modules/MainPage/SkillsSection/SkillsSection';
 
-export const SlickWrapper = () => {
+export const MainPageSectionsWrapper = () => {
   return (
     <div>
       <HelloSection />
       <AboutMeSection />
-      <SkillsSection />
       <MyProjectsSection />
       <ContactMeSection />
     </div>

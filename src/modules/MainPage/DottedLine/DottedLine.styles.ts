@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.div`
   display: none;
   bottom: 3rem;
-  right: clamp(2rem, 4vw, 4rem);
-  display: flex;
-  justify-content: flex-end;
+  width: 100vw;
+  justify-content: center;
   gap: 1.75rem;
   @media screen and (min-width: 37.5rem) {
-    position: fixed;
+    display: flex;
+    position: absolute;
   }
 `;
 
