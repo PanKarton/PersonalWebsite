@@ -8,7 +8,7 @@ export const MainPageSectionsWrapper = () => {
   return (
     <div style={{ overflow: 'hidden' }}>
       <HelloSection />
-      {/* <AboutMeSection /> */}
+      <AboutMeSection />
       {/* <MyProjectsSection /> */}
       {/* <ContactMeSection /> */}
     </div>

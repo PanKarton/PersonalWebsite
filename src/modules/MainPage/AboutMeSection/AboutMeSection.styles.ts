@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
 export const FlexWrapper = styled.div`
+  border: 1px solid blue;
+
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding-block: 3rem;
   @media screen and (min-width: 50rem) {
     justify-content: flex-start;
   }
 `;
-export const StyledWrapper = styled.div`
+export const StyledTextWrapper = styled.div`
+  border: 1px solid red;
+
   width: calc(100vw - 3rem);
 
   display: flex;
@@ -33,3 +39,5 @@ export const StyledWrapper = styled.div`
     max-width: max-content;
   }
 `;
+
+export const StyledImagesWrapper = styled.div``;
