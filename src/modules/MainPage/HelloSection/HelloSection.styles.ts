@@ -27,7 +27,7 @@ export const HeroWrapper = styled.div`
   }
 
   /* Portrait */
-  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+  @media screen and (orientation: portrait) and (min-height: 81.25remomm) {
     flex-direction: column;
     gap: clamp(4rem, 5vh, 8rem);
   }
@@ -65,7 +65,7 @@ export const HeroTextWrapper = styled.div`
   }
 
   /* Portrait */
-  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+  @media screen and (orientation: portrait) and (min-height: 81.25remomm) {
     max-width: 25rem;
     p {
       font-size: ${({ theme }) => theme.fontSize.textLG};
@@ -96,7 +96,7 @@ export const HeroHeading = styled.h2`
   }
 
   /* Portrait */
-  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+  @media screen and (orientation: portrait) and (min-height: 81.25remomm) {
     font-size: ${({ theme }) => theme.fontSize.text6XL};
   }
 `;
