@@ -25,6 +25,12 @@ export const HeroWrapper = styled.div`
   @media screen and (min-width: 69rem) {
     justify-content: space-between;
   }
+
+  /* Portrait */
+  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+    flex-direction: column;
+    gap: clamp(4rem, 5vh, 8rem);
+  }
 `;
 
 export const HeroTextWrapper = styled.div`
@@ -52,6 +58,19 @@ export const HeroTextWrapper = styled.div`
     p {
       font-size: ${({ theme }) => theme.fontSize.textLG};
       &.big {
+        margin-top: 1rem;
+        font-size: ${({ theme }) => theme.fontSize.textXL};
+      }
+    }
+  }
+
+  /* Portrait */
+  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+    max-width: 25rem;
+    p {
+      font-size: ${({ theme }) => theme.fontSize.textLG};
+      &.big {
+        margin-top: 1rem;
         font-size: ${({ theme }) => theme.fontSize.textXL};
       }
     }
@@ -63,7 +82,6 @@ export const HeroHeading = styled.h2`
   font-weight: 400;
   line-height: 1;
   font-size: ${({ theme }) => theme.fontSize.text4XL};
-
   @media screen and (min-width: 50rem) {
     font-size: ${({ theme }) => theme.fontSize.text5XL};
   }
@@ -76,15 +94,18 @@ export const HeroHeading = styled.h2`
   @media screen and (min-width: 112.5rem) {
     font-size: ${({ theme }) => theme.fontSize.text8XL};
   }
+
+  /* Portrait */
+  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+    font-size: ${({ theme }) => theme.fontSize.text6XL};
+  }
 `;
 
 export const HeroImgWrapper = styled.div`
   aspect-ratio: 1.2;
-  /* border: 1px solid blue; */
 
   div {
     position: relative;
-    /* border: 1px solid red; */
     height: 100%;
     @media screen and (min-width: 50rem) {
       position: absolute;
@@ -109,12 +130,22 @@ export const HeroImgWrapper = styled.div`
   }
   @media screen and (min-width: 87.5rem) {
     margin-inline: auto;
-    /* max-width: 35rem; */
     max-width: clamp(29rem, 32vw, 35rem);
   }
   @media screen and (min-width: 112.5rem) {
     margin-left: 0;
     margin-right: 10rem;
+  }
+
+  /* Portrait */
+  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
+    width: 100%;
+    div {
+      position: relative;
+      top: 0;
+      translate: 0 0;
+      width: 100%;
+    }
   }
 `;
 
@@ -125,6 +156,7 @@ export const DotSquareImageWrapper = styled.div`
   right: 4rem;
   width: 11.75rem;
   aspect-ratio: 1;
+  z-index: 1;
   @media screen and (min-width: 87.5rem) {
     display: block;
   }

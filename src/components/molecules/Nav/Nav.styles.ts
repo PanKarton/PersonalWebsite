@@ -17,6 +17,7 @@ export const StyledNav = styled.nav`
     translate: 0 0;
     padding-block: 2.5rem;
     height: auto;
+    background-color: ${({ theme }) => theme.color.primary};
   }
 `;
 
