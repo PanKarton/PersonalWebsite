@@ -6,11 +6,11 @@ import { SkillsSection } from '@/modules/MainPage/SkillsSection/SkillsSection';
 
 export const MainPageSectionsWrapper = () => {
   return (
-    <div>
+    <div style={{ overflow: 'hidden' }}>
       <HelloSection />
-      <AboutMeSection />
-      <MyProjectsSection />
-      <ContactMeSection />
+      {/* <AboutMeSection /> */}
+      {/* <MyProjectsSection /> */}
+      {/* <ContactMeSection /> */}
     </div>
   );
 };

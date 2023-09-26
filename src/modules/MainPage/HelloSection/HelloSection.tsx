@@ -11,24 +11,29 @@ import {
   HeroImgWrapper,
   HeroTextWrapper,
   HeroWrapper,
+  StyledWrapper,
 } from './HelloSection.styles';
 
 export const HelloSection = () => {
   return (
     <div style={{ position: 'relative' }}>
       <MainPageSection id="hello">
-        <HeroWrapper>
-          <HeroTextWrapper>
-            <p>Hi, my name is</p>
-            <HeroHeading>Arkadiusz Piersiak</HeroHeading>
-            <DoubleLineDivider />
-            <p className="big">I’m home made frontend developer</p>
-          </HeroTextWrapper>
+        <StyledWrapper>
+          <HeroWrapper>
+            <HeroTextWrapper>
+              <p>Hi, my name is</p>
+              <HeroHeading>Arkadiusz Piersiak</HeroHeading>
+              <DoubleLineDivider />
+              <p className="big">I’m home made frontend developer</p>
+            </HeroTextWrapper>
 
-          <HeroImgWrapper>
-            <Image src={heroImg} alt="box image bade of dots" fill />
-          </HeroImgWrapper>
-        </HeroWrapper>
+            <HeroImgWrapper>
+              <div>
+                <Image src={heroImg} alt="box image bade of dots" fill />
+              </div>
+            </HeroImgWrapper>
+          </HeroWrapper>
+        </StyledWrapper>
       </MainPageSection>
       <DotSquareImageWrapper>
         <Image src={dotsSquare} alt="square made of dots" fill />

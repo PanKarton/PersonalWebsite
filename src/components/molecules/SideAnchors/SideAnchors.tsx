@@ -13,9 +13,6 @@ export const SideAnchors = ({ activeSection }: SideAnchors) => {
       <li className={activeSection === '#about-me' ? 'active' : ''}>
         <StyledAnchor href="#about-me" />
       </li>
-      <li className={activeSection === '#skills' ? 'active' : ''}>
-        <StyledAnchor href="#skills" />
-      </li>
       <li className={activeSection === '#my-projects' ? 'active' : ''}>
         <StyledAnchor href="#my-projects" />
       </li>
