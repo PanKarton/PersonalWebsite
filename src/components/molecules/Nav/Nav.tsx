@@ -24,11 +24,6 @@ export const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink href="#skills" isActive={false}>
-              SKILLS
-            </NavLink>
-          </li>
-          <li>
             <NavLink href="#my-projects" isActive={false}>
               MY PROJECTS
             </NavLink>

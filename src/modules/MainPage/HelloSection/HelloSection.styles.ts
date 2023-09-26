@@ -16,9 +16,9 @@ export const HeroWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  width: 100%;
 
   @media screen and (min-width: 50rem) {
-    /* gap: 4rem; */
     flex-direction: row;
     align-items: center;
   }
@@ -44,6 +44,18 @@ export const HeroTextWrapper = styled.div`
   @media screen and (min-width: 50rem) {
     max-width: 16rem;
   }
+  @media screen and (min-width: 75.5rem) {
+    max-width: 25rem;
+  }
+
+  @media screen and (min-width: 112.5rem) {
+    p {
+      font-size: ${({ theme }) => theme.fontSize.textLG};
+      &.big {
+        font-size: ${({ theme }) => theme.fontSize.textXL};
+      }
+    }
+  }
 `;
 
 export const HeroHeading = styled.h2`
@@ -57,6 +69,12 @@ export const HeroHeading = styled.h2`
   }
   @media screen and (min-width: 69rem) {
     font-size: ${({ theme }) => theme.fontSize.text6XL};
+  }
+  @media screen and (min-width: 75.5rem) {
+    font-size: ${({ theme }) => theme.fontSize.text7XL};
+  }
+  @media screen and (min-width: 112.5rem) {
+    font-size: ${({ theme }) => theme.fontSize.text8XL};
   }
 `;
 
@@ -79,6 +97,7 @@ export const HeroImgWrapper = styled.div`
     @media screen and (min-width: 65rem) {
       position: relative;
       margin-left: auto;
+      width: 100%;
     }
   }
   @media screen and (min-width: 50rem) {
@@ -87,6 +106,13 @@ export const HeroImgWrapper = styled.div`
   }
   @media screen and (min-width: 69rem) {
     max-width: 29rem;
+  }
+  @media screen and (min-width: 87.5rem) {
+    margin-inline: auto;
+  }
+  @media screen and (min-width: 112.5rem) {
+    margin-inline: 0;
+    max-width: 35rem;
   }
 `;
 
