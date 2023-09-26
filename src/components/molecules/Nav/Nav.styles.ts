@@ -15,7 +15,7 @@ export const StyledNav = styled.nav`
 
   @media screen and (min-width: 87.5rem) {
     translate: 0 0;
-    padding-block: 3rem;
+    padding-block: 2.5rem;
     height: auto;
   }
 `;
@@ -30,7 +30,7 @@ export const StyledList = styled.ul`
   gap: 1rem;
 
   @media screen and (min-width: 87.5rem) {
-    gap: 4rem;
+    gap: 5rem;
     flex-direction: row;
     height: auto;
     background-color: transparent;

@@ -109,10 +109,12 @@ export const HeroImgWrapper = styled.div`
   }
   @media screen and (min-width: 87.5rem) {
     margin-inline: auto;
+    /* max-width: 35rem; */
+    max-width: clamp(29rem, 32vw, 35rem);
   }
   @media screen and (min-width: 112.5rem) {
-    margin-inline: 0;
-    max-width: 35rem;
+    margin-left: 0;
+    margin-right: 10rem;
   }
 `;
 

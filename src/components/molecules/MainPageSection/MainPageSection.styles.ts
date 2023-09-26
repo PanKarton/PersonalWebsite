@@ -17,7 +17,7 @@ export const StyledSection = styled.section`
       max-width: calc(100vw - 15rem);
     }
     @media screen and (min-width: 100rem) {
-      max-width: 87.5rem;
+      max-width: 93.75rem;
     }
   }
 `;

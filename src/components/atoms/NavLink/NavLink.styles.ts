@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledLink = styled(Link)`
   font-size: ${({ theme }) => theme.fontSize.text2XL};
-  color: ${({ theme }) => theme.color.contrastDarker};
+  color: ${({ theme }) => theme.color.primaryLighter};
 
   &.active {
     color: ${({ theme }) => theme.color.accentPrimary};
