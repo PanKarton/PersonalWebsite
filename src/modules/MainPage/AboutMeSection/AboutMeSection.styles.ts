@@ -8,11 +8,12 @@ export const FlexWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
 
-  padding-block: 3rem 5rem;
-  @media screen and (min-width: 50rem) {
+  padding-block: 5rem;
+  @media screen and (min-width: 62.5rem) {
     justify-content: flex-start;
+    flex-direction: row-reverse;
   }
 `;
 export const StyledTextWrapper = styled.div`
@@ -22,23 +23,26 @@ export const StyledTextWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
+  text-align: right;
 
   .paragraph {
     margin-top: 0.75rem;
-    text-align: right;
   }
   a {
     margin-top: 1rem;
   }
 
   @media screen and (min-width: 37.5rem) {
-    max-width: 25rem;
+    width: 100%;
     align-items: flex-end;
   }
 
+  @media screen and (min-width: 50rem) {
+  }
   @media screen and (min-width: 56.25rem) {
     gap: 0.75rem;
-    max-width: max-content;
+    text-align: left;
+    align-items: flex-start;
   }
 `;
 
