@@ -9,6 +9,7 @@ export const FrameLink = ({ children, href }: FrameLinkProps) => {
   return (
     <StyledLink href={href}>
       <p>{children}</p>
+      <span className="arrow-body" />
     </StyledLink>
   );
 };

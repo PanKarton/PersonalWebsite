@@ -37,8 +37,6 @@ export const StyledTextWrapper = styled.div`
     align-items: flex-end;
   }
 
-  @media screen and (min-width: 50rem) {
-  }
   @media screen and (min-width: 56.25rem) {
     gap: 0.75rem;
     text-align: left;
