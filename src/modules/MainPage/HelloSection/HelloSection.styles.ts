@@ -41,6 +41,7 @@ export const HeroTextWrapper = styled.div`
     color: ${({ theme }) => theme.color.contrast};
     &.big {
       font-size: ${({ theme }) => theme.fontSize.textLG};
+      margin-top: 0.5rem;
       @media screen and (min-width: 69rem) {
         font-size: ${({ theme }) => theme.fontSize.textXL};
       }
@@ -65,7 +66,7 @@ export const HeroTextWrapper = styled.div`
   }
 
   /* Portrait */
-  @media screen and (orientation: portrait) and (min-height: 81.25remomm) {
+  @media screen and (orientation: portrait) and (min-height: 81.25rem) {
     max-width: 25rem;
     p {
       font-size: ${({ theme }) => theme.fontSize.textLG};

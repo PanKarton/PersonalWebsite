@@ -2,7 +2,7 @@ import { MainPageSection } from '@/components/molecules/MainPageSection/MainPage
 import Image from 'next/image';
 import dotsSquare from 'public/images/dot-square.svg';
 import heroImg from 'public/images/hero-img.png';
-import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
+import { LShapeDivider } from '@/components/atoms/LShapeDivider/LShapeDivider';
 import { DottedLine } from '@/modules/MainPage/DottedLine/DottedLine';
 
 import {
@@ -23,7 +23,7 @@ export const HelloSection = () => {
             <HeroTextWrapper>
               <p>Hi, my name is</p>
               <HeroHeading>Arkadiusz Piersiak</HeroHeading>
-              <DoubleLineDivider />
+              <LShapeDivider />
               <p className="big">I’m home made frontend developer</p>
             </HeroTextWrapper>
 

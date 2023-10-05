@@ -12,7 +12,7 @@ export const SectionHeading = styled.h2`
     font-size: clamp(4rem, 6.5vw, 6rem);
   }
   @media screen and (min-width: 87.5rem) {
-    font-size: ${({ theme }) => theme.fontSize.text9XL};
+    font-size: ${({ theme }) => theme.fontSize.text8XL};
     line-height: 0.9;
   }
 `;
