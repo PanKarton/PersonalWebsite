@@ -59,7 +59,7 @@ export const HeroTextWrapper = styled.div`
     p {
       font-size: ${({ theme }) => theme.fontSize.textLG};
       &.big {
-        margin-top: 1rem;
+        margin-top: 1.25rem;
         font-size: ${({ theme }) => theme.fontSize.textXL};
       }
     }
