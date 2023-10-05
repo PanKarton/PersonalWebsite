@@ -7,20 +7,27 @@ export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.color.contrast};
   text-align: center;
   padding-block: 0.75rem;
-  padding-right: 0.5rem;
 
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-
-  translate: 1rem 0%;
-  transition: translate 250ms ease-in-out;
+  justify-content: space-between;
+  gap: 0.75rem;
 
   p {
     font-size: ${({ theme }) => theme.fontSize.textBase};
+    transition: all 250ms ease-in-out;
+  }
+
+  .line {
+    display: block;
+    width: 1rem;
+    height: 0.125rem;
+    background-color: ${({ theme }) => theme.color.accentPrimary};
+    transition: all 250ms ease-in-out;
   }
 
   .arrow-body {
+    display: block;
     width: 1rem;
     height: 0.125rem;
     background-color: ${({ theme }) => theme.color.accentPrimary};
@@ -56,11 +63,18 @@ export const StyledLink = styled(Link)`
   }
 
   &:hover {
-    translate: 0 0;
-    padding-right: 1.5rem;
+    padding-right: 0.5rem;
+    p {
+      translate: -1rem 0;
+    }
+
+    .line {
+      scale: 0 1;
+      translate: -1rem 0;
+    }
 
     .arrow-body {
-      translate: 0.625rem 0;
+      translate: -0.375rem 0;
       scale: 1.5 1;
 
       &::before,

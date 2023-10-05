@@ -17,8 +17,6 @@ export const FlexWrapper = styled.div`
   }
 `;
 export const StyledTextWrapper = styled.div`
-  /* border: 1px solid red; */
-
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -30,6 +28,7 @@ export const StyledTextWrapper = styled.div`
   }
   a {
     margin-top: 1rem;
+    translate: 0.25rem 0%;
   }
 
   @media screen and (min-width: 37.5rem) {
@@ -45,7 +44,6 @@ export const StyledTextWrapper = styled.div`
 `;
 
 export const StyledImagesWrapper = styled.div`
-  /* border: 1px solid red; */
   position: relative;
   width: 100%;
   aspect-ratio: 0.95;
