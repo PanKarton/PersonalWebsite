@@ -62,7 +62,8 @@ export const StyledLink = styled(Link)`
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     padding-right: 0.5rem;
     p {
       translate: -1rem 0;
@@ -82,5 +83,8 @@ export const StyledLink = styled(Link)`
         scale: 1 1;
       }
     }
+  }
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.color.accentPrimary};
   }
 `;
