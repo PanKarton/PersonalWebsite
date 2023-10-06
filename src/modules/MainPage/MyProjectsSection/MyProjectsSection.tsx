@@ -22,9 +22,9 @@ export const MyProjectsSection = () => {
         </StyledTextWrapper>
 
         <LastProjectWrapper>
-          {/* <div className="decoration-wrapper">
-          <Image src={projectDecoration} alt="yellow wavy shapes" fill />
-        </div> */}
+          <div className="decoration-wrapper">
+            <Image src={projectDecoration} alt="yellow wavy shapes" fill />
+          </div>
           <div className="content-wrapper">
             <div className="img-wrapper">
               <Image src={projectImageURL} alt="project thumbnail" fill />
