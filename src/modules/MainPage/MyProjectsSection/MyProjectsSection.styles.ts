@@ -4,7 +4,6 @@ export const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* gap: 2rem; */
   gap: 4rem;
 
   padding-inline: clamp(1rem, 7vw, 3rem);
@@ -64,20 +63,23 @@ export const LastProjectWrapper = styled.div`
 
     .project-description {
       color: ${({ theme }) => theme.color.contrast};
-      /* margin-top: 1rem; */
       margin-top: 0.75rem;
-
-      @media screen and (min-width: 87.5rem) {
-        margin-top: 1.25rem;
-        font-size: ${({ theme }) => theme.fontSize.textXL};
-      }
     }
 
     a {
       display: block;
       color: ${({ theme }) => theme.color.accentPrimary};
-      /* margin-top: 2rem; */
       margin-top: 1rem;
+    }
+    @media screen and (min-width: 87.5rem) {
+      .project-description {
+        margin-top: 1.25rem;
+        font-size: ${({ theme }) => theme.fontSize.textXL};
+      }
+      a {
+        margin-top: 2rem;
+        font-size: ${({ theme }) => theme.fontSize.textXL};
+      }
     }
   }
 
