@@ -23,16 +23,14 @@ export const MyProjectsSection = () => {
 
         <LastProjectWrapper>
           {/* <div className="decoration-wrapper">
-            <Image src={projectDecoration} alt="yellow wavy shapes" fill />
-          </div> */}
+          <Image src={projectDecoration} alt="yellow wavy shapes" fill />
+        </div> */}
           <div className="content-wrapper">
             <div className="img-wrapper">
               <Image src={projectImageURL} alt="project thumbnail" fill />
             </div>
-            <span className="project-description">{projectDescription}</span>
-            <a href={projectURL}>
-              <span>Live version</span>
-            </a>
+            <p className="project-description">{projectDescription}</p>
+            <a href={projectURL}>Live version</a>
           </div>
         </LastProjectWrapper>
       </FlexWrapper>

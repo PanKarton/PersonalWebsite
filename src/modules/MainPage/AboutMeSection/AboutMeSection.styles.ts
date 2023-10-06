@@ -14,6 +14,7 @@ export const FlexWrapper = styled.div`
   padding-inline: clamp(1rem, 7vw, 3rem);
   @media screen and (min-width: 62.5rem) {
     justify-content: flex-start;
+    align-items: center;
     flex-direction: row-reverse;
   }
 `;
