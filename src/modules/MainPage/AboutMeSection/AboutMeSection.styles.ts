@@ -6,13 +6,15 @@ export const FlexWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 4rem;
 
   padding-block: 5rem;
+  padding-inline: clamp(1rem, 7vw, 3rem);
   @media screen and (min-width: 62.5rem) {
     justify-content: flex-start;
+    align-items: center;
     flex-direction: row-reverse;
   }
 `;
@@ -36,7 +38,7 @@ export const StyledTextWrapper = styled.div`
     align-items: flex-end;
   }
 
-  @media screen and (min-width: 56.25rem) {
+  @media screen and (min-width: 62.5rem) {
     gap: 0.75rem;
     text-align: left;
     align-items: flex-start;

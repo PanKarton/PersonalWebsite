@@ -1,21 +1,39 @@
-import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
 import { FrameLink } from '@/components/atoms/FrameLink/FrameLink';
+import { LShapeDivider } from '@/components/atoms/LShapeDivider/LShapeDivider';
 import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
-import { SectionParagraph } from '@/components/atoms/SectionParagraph/SectionParagraph';
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
-import { FlexWrapper, StyledWrapper } from './MyProjectsSection.styles';
+import Image from 'next/image';
+import { FlexWrapper, LastProjectWrapper, StyledTextWrapper } from './MyProjectsSection.styles';
+import projectImageURL from 'public/images/project-thumbnail.png';
+import projectDecoration from 'public/images/last-project-decoration.svg';
 
-export const MyProjectsSection = () => (
-  <MainPageSection id="my-projects">
-    <FlexWrapper>
-      <StyledWrapper>
-        <SectionHeading>My projets</SectionHeading>
-        <DoubleLineDivider />
-        <SectionParagraph className="paragraph">
-          Both commercial and made just for fun.
-        </SectionParagraph>
-        <FrameLink href={'/my-projects'}>Show more</FrameLink>
-      </StyledWrapper>
-    </FlexWrapper>
-  </MainPageSection>
-);
+export const MyProjectsSection = () => {
+  const projectDescription =
+    'Multi page website made with Next.js and connected to Strapi CMS for city nusery.';
+  const projectURL = '';
+
+  return (
+    <MainPageSection id="my-projects">
+      <FlexWrapper>
+        <StyledTextWrapper>
+          <SectionHeading>Latest project</SectionHeading>
+          <LShapeDivider />
+          <FrameLink href={'/my-projects'}>Show more</FrameLink>
+        </StyledTextWrapper>
+
+        <LastProjectWrapper>
+          <div className="decoration-wrapper">
+            <Image src={projectDecoration} alt="yellow wavy shapes" fill />
+          </div>
+          <div className="content-wrapper">
+            <div className="img-wrapper">
+              <Image src={projectImageURL} alt="project thumbnail" fill />
+            </div>
+            <p className="project-description">{projectDescription}</p>
+            <a href={projectURL}>Live version</a>
+          </div>
+        </LastProjectWrapper>
+      </FlexWrapper>
+    </MainPageSection>
+  );
+};

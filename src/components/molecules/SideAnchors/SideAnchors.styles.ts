@@ -23,6 +23,7 @@ export const StyledList = styled.ul`
     align-items: center;
     justify-content: center;
     border-radius: 0.125rem;
+
     &.active {
       scale: 1 2;
       translate: 0 -50%;
@@ -46,4 +47,9 @@ export const StyledAnchor = styled.a`
   display: block;
   height: 2rem;
   width: 1rem;
+
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.color.accentPrimary};
+    outline-offset: 0.25rem;
+  }
 `;

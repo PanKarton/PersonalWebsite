@@ -13,4 +13,9 @@ export const StyledLink = styled(Link)`
     cursor: pointer;
     color: ${({ theme }) => theme.color.contrastDarkerHover};
   }
+
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.color.accentPrimary};
+    outline-offset: 0.5rem;
+  }
 `;
