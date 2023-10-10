@@ -49,14 +49,16 @@ export const StyledIconsWrapper = styled.div`
     position: relative;
     aspect-ratio: 1;
     width: 2rem;
+
     a {
       display: block;
       width: 100%;
       height: 100%;
 
-      &:focus-visible {
-        /* outline: none; */
-        outline: 0.125 solid ${({ theme }) => theme.color.accentPrimary};
+      &:focus {
+        outline: none;
+        border: 0.125rem solid ${({ theme }) => theme.color.accentPrimary};
+        border-radius: 0.25rem;
       }
     }
     svg {
