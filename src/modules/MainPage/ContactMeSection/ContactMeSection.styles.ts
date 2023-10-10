@@ -2,37 +2,50 @@ import styled from 'styled-components';
 
 export const FlexWrapper = styled.div`
   position: relative;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-`;
-
-export const StyledWrapper = styled.div`
-  width: calc(100vw - 3rem);
+  width: calc(100% - 3rem);
+  margin-inline: auto;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 2rem;
+
+  padding-bottom: 7rem;
 
   h2 {
-    @media screen and (min-width: 87.5rem) {
-      /* font-size: ${({ theme }) => theme.fontSize.text8XL}; */
-    }
+    translate: -0.25rem 0;
   }
 
-  .paragraph {
-    margin-top: 0.75rem;
-    font-size: 1rem;
+  @media screen and (min-width: 37.5rem) {
+    gap: 4rem;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 62.5rem) {
+    flex-direction: row;
+  }
+`;
+
+export const StyledTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+`;
+
+export const StyledParagraph = styled.p`
+  color: ${({ theme }) => theme.color.contrast};
+  max-width: 26rem;
+
+  margin-top: 0.5rem;
+
+  @media screen and (min-width: 87.5rem) {
+    font-size: ${({ theme }) => theme.fontSize.textLG};
   }
 `;
 
 export const IconsWrapper = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 0.25rem;
   display: flex;
   gap: 1rem;
   width: min(100%, 270px);

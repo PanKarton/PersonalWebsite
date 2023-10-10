@@ -9,7 +9,7 @@ export const MainPageSectionsWrapper = () => {
       <HelloSection />
       <AboutMeSection />
       <MyProjectsSection />
-      {/* <ContactMeSection /> */}
+      <ContactMeSection />
     </div>
   );
 };
