@@ -4,7 +4,6 @@ import linkedInIcon from 'public/images/linkedin-icon.svg';
 import gitHub from 'public/images/gh-icon-white.svg';
 import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
 import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
-import { SectionParagraph } from '@/components/atoms/SectionParagraph/SectionParagraph';
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
 import { ContactForm } from '../ContactForm/ContactForm';
 import {

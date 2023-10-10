@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const FlexWrapper = styled.div`
-  position: relative;
-  width: calc(100% - 3rem);
-  margin-inline: auto;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
 
   padding-bottom: 7rem;
+  padding-inline: clamp(1rem, 7vw, 3rem);
 
   h2 {
     translate: -0.25rem 0;
@@ -61,26 +58,6 @@ export const IconsWrapper = styled.div`
       position: relative;
       width: 100%;
       height: 100%;
-    }
-
-    &.icon--envelope {
-      width: 2.25rem;
-
-      button {
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-      svg {
-        color: white;
-        width: 100%;
-        height: 100%;
-      }
-
-      @media screen and (min-width: 50rem) {
-        display: none;
-      }
     }
   }
 `;
