@@ -17,7 +17,7 @@ export const FlexWrapper = styled.div`
 
   /*  */
   padding-top: 3rem;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 `;
 export const StyledTextWrapper = styled.div`
   display: flex;
