@@ -7,16 +7,16 @@ type SideAnchors = {
 export const SideAnchors = ({ activeSection }: SideAnchors) => {
   return (
     <StyledList>
-      <li className={activeSection === '#hello' ? 'active' : ''}>
+      <li className={activeSection === 'hello' ? 'active' : ''}>
         <StyledAnchor href="#hello" />
       </li>
-      <li className={activeSection === '#about-me' ? 'active' : ''}>
+      <li className={activeSection === 'about-me' ? 'active' : ''}>
         <StyledAnchor href="#about-me" />
       </li>
-      <li className={activeSection === '#my-projects' ? 'active' : ''}>
+      <li className={activeSection === 'my-projects' ? 'active' : ''}>
         <StyledAnchor href="#my-projects" />
       </li>
-      <li className={activeSection === '#contact-me' ? 'active' : ''}>
+      <li className={activeSection === 'contact-me' ? 'active' : ''}>
         <StyledAnchor href="#contact-me" />
       </li>
     </StyledList>

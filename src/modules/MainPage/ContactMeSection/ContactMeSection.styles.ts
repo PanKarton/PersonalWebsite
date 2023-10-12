@@ -6,6 +6,7 @@ export const FlexWrapper = styled.div`
   align-items: flex-start;
   gap: 2rem;
 
+  padding-top: 5rem;
   padding-bottom: 7rem;
   padding-inline: clamp(1rem, 7vw, 3rem);
 

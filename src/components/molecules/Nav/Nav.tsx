@@ -3,7 +3,11 @@ import { NavLink } from '@/components/atoms/NavLink/NavLink';
 import { useState } from 'react';
 import { StyledList, StyledNav } from './Nav.styles';
 
-export const Nav = () => {
+type NavProps = {
+  activeSection: string;
+};
+
+export const Nav = ({ activeSection }: NavProps) => {
   const [isActive, setisActive] = useState(false);
 
   const handleToggleNavMenu = () => setisActive(prev => !prev);
@@ -14,22 +18,22 @@ export const Nav = () => {
       <StyledNav className={isActive ? 'isActive' : ''}>
         <StyledList>
           <li>
-            <NavLink href="#hello" isActive={true}>
+            <NavLink href="#hello" isActive={activeSection === 'hello'}>
               HOME
             </NavLink>
           </li>
           <li>
-            <NavLink href="#about-me" isActive={false}>
+            <NavLink href="#about-me" isActive={activeSection === 'about-me'}>
               ABOUT ME
             </NavLink>
           </li>
           <li>
-            <NavLink href="#my-projects" isActive={false}>
+            <NavLink href="#my-projects" isActive={activeSection === 'my-projects'}>
               MY PROJECTS
             </NavLink>
           </li>
           <li>
-            <NavLink href="#contact-me" isActive={false}>
+            <NavLink href="#contact-me" isActive={activeSection === 'contact-me'}>
               CONTACT ME
             </NavLink>
           </li>
