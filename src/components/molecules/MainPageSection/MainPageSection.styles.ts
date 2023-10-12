@@ -4,7 +4,6 @@ export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.color.primary};
   display: flex;
   justify-content: center;
-  border-top: 1px solid wheat;
   .max-width-wrapper {
     position: relative;
 
