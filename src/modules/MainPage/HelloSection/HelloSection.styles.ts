@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
   padding-block: 5rem;
-  padding-inline: 1.5rem;
+  padding-inline: clamp(1.5rem, 7vw, 3rem);
   min-height: 100dvh;
 
   display: flex;

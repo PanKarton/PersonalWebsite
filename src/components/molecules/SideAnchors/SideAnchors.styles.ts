@@ -4,7 +4,6 @@ export const StyledList = styled.ul`
   position: fixed;
 
   height: 3.5rem;
-
   left: 50%;
   bottom: 0;
   translate: -50% 0;

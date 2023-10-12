@@ -7,13 +7,13 @@ import { MainPageSectionsWrapper } from '@/modules/MainPage/MainPageSectionsWrap
 
 const Page = () => {
   return (
-    <>
+    <div>
       <MainPageSectionsWrapper />
       <SideAnchors activeSection="#hello" />
       <Nav />
       <MainLogo />
       <GitHubLink />
-    </>
+    </div>
   );
 };
 

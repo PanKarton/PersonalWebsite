@@ -5,7 +5,6 @@ export const StyledSection = styled.section`
   display: flex;
   justify-content: center;
   .max-width-wrapper {
-    /* border-inline: 1px solid wheat; */
     position: relative;
 
     width: 100%;
