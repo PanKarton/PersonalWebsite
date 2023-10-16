@@ -157,7 +157,7 @@ export const DotSquareImageWrapper = styled.div`
   right: 4rem;
   width: 11.75rem;
   aspect-ratio: 1;
-  z-index: 1;
+  z-index: 3;
   @media screen and (min-width: 87.5rem) {
     display: block;
   }
