@@ -5,6 +5,7 @@ import { ContactMeSection } from '@/modules/MainPage/ContactMeSection/ContactMeS
 import { HelloSection } from '@/modules/MainPage/HelloSection/HelloSection';
 import { MyProjectsSection } from '@/modules/MainPage/MyProjectsSection/MyProjectsSection';
 import { RefObject, useEffect, useRef } from 'react';
+import { StyledWrapper } from './MainPageSectionsWrapper.styles';
 
 type MainPageSectionsWrapperProps = {
   sectionsRefs: RefObject<HTMLElement>[];
@@ -23,11 +24,9 @@ export const MainPageSectionsWrapper = ({
       if (sideAnchorsRef.current === null) return;
 
       entries.forEach(({ isIntersecting }) => {
-        if (isIntersecting) {
-          console.log(sideAnchorsRef?.current?.style);
-        } else {
-          console.log('nie widac mnie');
-        }
+        console.log(isIntersecting);
+
+        sideAnchorsRef.current?.classList.toggle('static', isIntersecting);
       });
     });
 
@@ -37,7 +36,7 @@ export const MainPageSectionsWrapper = ({
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <StyledWrapper>
       <HelloSection ref={sectionsRefs[0]} />
       <AboutMeSection ref={sectionsRefs[1]} />
       <MyProjectsSection ref={sectionsRefs[2]} />
@@ -45,6 +44,6 @@ export const MainPageSectionsWrapper = ({
       <SideAnchors activeSection={activeSection} ref={sideAnchorsRef} />
 
       <Footer ref={footerRef} />
-    </div>
+    </StyledWrapper>
   );
 };
