@@ -1,11 +1,12 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
 
 export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
-  const [activeSection, setActiveSection] = useState('hello');
-  const [scrollPosition, setScrollPosition] = useState(window.scrollY + window.innerHeight / 2);
+  const [activeSection, setActiveSection] = useState('');
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = useCallback(() => {
     // Set to the middle of the screen
+    if (typeof window === 'undefined') return;
     setScrollPosition(window.scrollY + window.innerHeight / 2);
 
     const filteredSections = sectionsRefs.filter(
@@ -24,12 +25,14 @@ export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
   }, [sectionsRefs, scrollPosition]);
 
   useEffect(() => {
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [handleScroll]);
+  }, [scrollPosition, sectionsRefs, handleScroll]);
 
   return { activeSection };
 };

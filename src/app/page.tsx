@@ -19,8 +19,7 @@ const Page = () => {
 
   return (
     <div>
-      <MainPageSectionsWrapper sectionsRefs={sectionsRefs} />
-      <SideAnchors activeSection={activeSection} />
+      <MainPageSectionsWrapper sectionsRefs={sectionsRefs} activeSection={activeSection} />
       <Nav activeSection={activeSection} />
       <MainLogo />
       <GitHubLink />

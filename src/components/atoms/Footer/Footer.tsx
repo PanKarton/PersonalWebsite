@@ -1,8 +1,9 @@
 import { StyledFooter, StyledIconsWrapper } from './Footer.styles';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import { ForwardedRef, forwardRef } from 'react';
 
-export const Footer = () => (
-  <StyledFooter>
+export const Footer = forwardRef((_, ref: ForwardedRef<HTMLElement>) => (
+  <StyledFooter ref={ref}>
     <div className="max-width-wrapper">
       <div className="copyright-wrapper">
         <span>&copy; 2023 Arkadiusz Piersiak </span>
@@ -23,4 +24,6 @@ export const Footer = () => (
       </StyledIconsWrapper>
     </div>
   </StyledFooter>
-);
+));
+
+Footer.displayName = 'Footer';
