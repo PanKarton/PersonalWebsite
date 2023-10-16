@@ -12,10 +12,11 @@ import {
   StyledTextWrapper,
   StyledParagraph,
 } from './ContactMeSection.styles';
+import { ForwardedRef, forwardRef } from 'react';
 
-export const ContactMeSection = () => {
+export const ContactMeSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   return (
-    <MainPageSection id="contact-me">
+    <MainPageSection id="contact-me" ref={ref}>
       <FlexWrapper>
         <StyledTextWrapper>
           <SectionHeading>Get in touch</SectionHeading>
@@ -43,4 +44,6 @@ export const ContactMeSection = () => {
       </FlexWrapper>
     </MainPageSection>
   );
-};
+});
+
+ContactMeSection.displayName = 'ContactMeSection';

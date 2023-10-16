@@ -6,10 +6,11 @@ import { MainPageSection } from '@/components/molecules/MainPageSection/MainPage
 import Image from 'next/image';
 import bigImage from 'public/images/about-me-img-big.png';
 import smallImage from 'public/images/about-me-img-small.png';
+import { ForwardedRef, forwardRef } from 'react';
 import { FlexWrapper, StyledTextWrapper, StyledImagesWrapper } from './AboutMeSection.styles';
 
-export const AboutMeSection = () => (
-  <MainPageSection id="about-me">
+export const AboutMeSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => (
+  <MainPageSection id="about-me" ref={ref}>
     <FlexWrapper>
       <StyledTextWrapper>
         <SectionHeading>About me</SectionHeading>
@@ -29,4 +30,6 @@ export const AboutMeSection = () => (
       </StyledImagesWrapper>
     </FlexWrapper>
   </MainPageSection>
-);
+));
+
+AboutMeSection.displayName = 'AboutMeSection';

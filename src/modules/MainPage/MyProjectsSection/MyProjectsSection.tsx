@@ -6,14 +6,15 @@ import Image from 'next/image';
 import { FlexWrapper, LastProjectWrapper, StyledTextWrapper } from './MyProjectsSection.styles';
 import projectImageURL from 'public/images/project-thumbnail.png';
 import projectDecoration from 'public/images/last-project-decoration.svg';
+import { ForwardedRef, forwardRef } from 'react';
 
-export const MyProjectsSection = () => {
+export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   const projectDescription =
     'Multi page website made with Next.js and connected to Strapi CMS for city nusery.';
   const projectURL = '';
 
   return (
-    <MainPageSection id="my-projects">
+    <MainPageSection id="my-projects" ref={ref}>
       <FlexWrapper>
         <StyledTextWrapper>
           <SectionHeading>Latest project</SectionHeading>
@@ -36,4 +37,6 @@ export const MyProjectsSection = () => {
       </FlexWrapper>
     </MainPageSection>
   );
-};
+});
+
+MyProjectsSection.displayName = 'MyProjectsSection';
