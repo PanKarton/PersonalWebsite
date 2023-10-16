@@ -8,7 +8,7 @@ type SideAnchors = {
 export const SideAnchors = forwardRef(
   ({ activeSection }: SideAnchors, ref: ForwardedRef<HTMLUListElement>) => {
     return (
-      <StyledList>
+      <StyledList ref={ref} className="static">
         <li className={activeSection === 'hello' ? 'active' : ''}>
           <StyledAnchor href="#hello" />
         </li>

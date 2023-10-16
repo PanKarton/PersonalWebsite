@@ -14,6 +14,18 @@ export const StyledList = styled.ul`
   justify-content: center;
   column-gap: 2.5rem;
 
+  @media screen and (max-width: 37.5rem) {
+    &.static {
+      position: static;
+      background-color: ${({ theme }) => theme.color.primary};
+      translate: 0 0;
+      li {
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
+      }
+    }
+  }
+
   li {
     width: 0.1875rem;
     height: 1.5rem;

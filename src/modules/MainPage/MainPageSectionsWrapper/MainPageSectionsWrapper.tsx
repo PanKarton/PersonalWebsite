@@ -24,9 +24,7 @@ export const MainPageSectionsWrapper = ({
 
       entries.forEach(({ isIntersecting }) => {
         if (isIntersecting) {
-          console.log('widac mnie');
-
-          console.log(sideAnchorsRef?.current);
+          console.log(sideAnchorsRef?.current?.style);
         } else {
           console.log('nie widac mnie');
         }
