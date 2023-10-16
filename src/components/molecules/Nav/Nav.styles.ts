@@ -6,8 +6,8 @@ export const StyledNav = styled.nav`
   left: 0;
   width: 100vw;
   height: 100vh;
-  translate: 100% 0;
-  z-index: 2;
+  translate: 0 -100%;
+  z-index: 10;
   transition: translate ease-in-out 250ms;
 
   &.isActive {
@@ -31,6 +31,7 @@ export const StyledList = styled.ul`
   background-color: ${({ theme }) => theme.color.primary};
   gap: 1rem;
 
+  /*  */
   @media screen and (min-width: 87.5rem) {
     gap: 5rem;
     flex-direction: row;

@@ -14,7 +14,7 @@ export const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 4;
+  z-index: 11;
 
   @media screen and (min-width: 30.25rem) {
     top: 1.75rem;
