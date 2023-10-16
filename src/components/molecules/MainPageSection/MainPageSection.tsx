@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ForwardedRef, forwardRef, ReactNode } from 'react';
 import { StyledSection } from './MainPageSection.styles';
 
 type MainPageSectionProps = {
@@ -6,8 +6,12 @@ type MainPageSectionProps = {
   id: string;
 };
 
-export const MainPageSection = ({ children, id }: MainPageSectionProps) => (
-  <StyledSection id={id}>
-    <div className="max-width-wrapper">{children}</div>
-  </StyledSection>
+export const MainPageSection = forwardRef(
+  ({ children, id }: MainPageSectionProps, ref: ForwardedRef<HTMLElement>) => (
+    <StyledSection id={id} ref={ref}>
+      <div className="max-width-wrapper">{children}</div>
+    </StyledSection>
+  )
 );
+
+MainPageSection.displayName = 'MainPageSection';

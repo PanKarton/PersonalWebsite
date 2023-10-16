@@ -13,11 +13,12 @@ import {
   HeroWrapper,
   StyledWrapper,
 } from './HelloSection.styles';
+import { ForwardedRef, forwardRef } from 'react';
 
-export const HelloSection = () => {
+export const HelloSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   return (
     <div style={{ position: 'relative' }}>
-      <MainPageSection id="hello">
+      <MainPageSection id="hello" ref={ref}>
         <StyledWrapper>
           <HeroWrapper>
             <HeroTextWrapper>
@@ -41,4 +42,6 @@ export const HelloSection = () => {
       <DottedLine />
     </div>
   );
-};
+});
+
+HelloSection.displayName = 'HelloSection';
