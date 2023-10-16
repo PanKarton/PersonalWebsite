@@ -13,6 +13,7 @@ export const StyledList = styled.ul`
   align-items: flex-end;
   justify-content: center;
   column-gap: 2.5rem;
+  z-index: 2;
 
   @media screen and (max-width: 37.5rem) {
     &.static {
