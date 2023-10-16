@@ -4,8 +4,9 @@ import { AboutMeSection } from '@/modules/MainPage/AboutMeSection/AboutMeSection
 import { ContactMeSection } from '@/modules/MainPage/ContactMeSection/ContactMeSection';
 import { HelloSection } from '@/modules/MainPage/HelloSection/HelloSection';
 import { MyProjectsSection } from '@/modules/MainPage/MyProjectsSection/MyProjectsSection';
-import { RefObject, useEffect, useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import { StyledWrapper } from './MainPageSectionsWrapper.styles';
+import { useSetSideAnchorsStatic } from './useSetSideAnchorsStatic';
 
 type MainPageSectionsWrapperProps = {
   sectionsRefs: RefObject<HTMLElement>[];
@@ -19,21 +20,7 @@ export const MainPageSectionsWrapper = ({
   const sideAnchorsRef = useRef<HTMLUListElement>(null);
   const footerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const sideAnchorsObserver = new IntersectionObserver(entries => {
-      if (sideAnchorsRef.current === null) return;
-
-      entries.forEach(({ isIntersecting }) => {
-        console.log(isIntersecting);
-
-        sideAnchorsRef.current?.classList.toggle('static', isIntersecting);
-      });
-    });
-
-    if (footerRef.current === null) return;
-
-    sideAnchorsObserver.observe(footerRef.current);
-  }, []);
+  useSetSideAnchorsStatic(sideAnchorsRef, footerRef);
 
   return (
     <StyledWrapper>

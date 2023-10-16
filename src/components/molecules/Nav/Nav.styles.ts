@@ -8,7 +8,7 @@ export const StyledNav = styled.nav`
   height: 100vh;
   translate: 100% 0;
   z-index: 2;
-  /* transition: translate ease-in-out 500ms; */
+  transition: translate ease-in-out 250ms;
 
   &.isActive {
     translate: 0 0;
