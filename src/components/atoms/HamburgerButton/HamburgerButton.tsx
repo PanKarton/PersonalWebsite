@@ -11,9 +11,10 @@ export const HamburgerButton = ({ onClick, isActive }: Props) => (
     tabIndex={0}
     aria-label="Button for toggling menu"
     className={isActive ? 'active' : ''}
+    isactive={isActive}
   >
     <span />
-    <span />
+    <span className="mid-line" />
     <span />
   </StyledBurger>
 );

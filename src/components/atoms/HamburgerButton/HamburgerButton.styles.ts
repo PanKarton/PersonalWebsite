@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledBurger = styled.button`
+type StyledBurgerProps = {
+  isactive: boolean;
+};
+
+export const StyledBurger = styled.button<StyledBurgerProps>`
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -23,38 +27,46 @@ export const StyledBurger = styled.button`
 
   @media screen and (min-width: 87.5rem) {
     display: none;
-    z-index: 10;
   }
 
   span {
     display: block;
     width: 2rem;
-    height: 0.25rem;
+    height: 0.125rem;
     background: ${({ theme }) => theme.color.contrast};
     border-radius: 0.625rem;
     position: relative;
-    transform-origin: 0.0625rem;
-    transition: all 0.125s linear;
+    transition: translate 125ms linear ${({ isactive }) => (isactive ? '' : '200ms')};
 
-    :nth-child(2) {
-      opacity: 1;
-      scale: 1 1;
+    &.mid-line::after,
+    &.mid-line::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      translate: 0 -50%;
+      width: 1rem;
+      height: 0.125rem;
+      border-radius: 0.625rem;
+      background: ${({ theme }) => theme.color.contrast};
+      transform-origin: right center;
+      transition: rotate 125ms linear ${({ isactive }) => (isactive ? '200ms' : '')};
     }
   }
 
   &.active {
-    span:first-child {
+    .mid-line::after {
       rotate: 47deg;
     }
-
-    span:nth-child(2) {
-      opacity: 0;
-      translate: 25% 0;
-      scale: 0 1;
+    .mid-line::before {
+      rotate: -47deg;
+    }
+    span:first-child {
+      translate: 0 0.6875rem;
     }
 
     span:nth-child(3) {
-      rotate: -47deg;
+      translate: 0 -0.6875rem;
     }
   }
 `;
