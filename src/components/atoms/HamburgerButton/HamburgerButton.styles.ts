@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-type StyledBurgerProps = {
-  isactive: boolean;
-};
-
-export const StyledBurger = styled.button<StyledBurgerProps>`
+export const StyledBurger = styled.button`
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -29,6 +25,16 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
     display: none;
   }
 
+  &.active {
+    span {
+      transition-delay: 0ms;
+      &.mid-line::after,
+      &.mid-line::before {
+        transition-delay: 200ms;
+      }
+    }
+  }
+
   span {
     display: block;
     width: 2rem;
@@ -36,7 +42,7 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
     background: ${({ theme }) => theme.color.contrast};
     border-radius: 0.625rem;
     position: relative;
-    transition: translate 125ms linear ${({ isactive }) => (isactive ? '' : '200ms')};
+    transition: translate 125ms linear 200ms;
 
     &.mid-line::after,
     &.mid-line::before {
@@ -50,7 +56,7 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
       border-radius: 0.625rem;
       background: ${({ theme }) => theme.color.contrast};
       transform-origin: right center;
-      transition: rotate 125ms linear ${({ isactive }) => (isactive ? '200ms' : '')};
+      transition: rotate 125ms linear 0ms;
     }
   }
 

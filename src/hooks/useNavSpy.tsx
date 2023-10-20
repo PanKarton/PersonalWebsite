@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useState } from 'react';
+import { RefObject, useCallback, useEffect, useLayoutEffect, useState } from 'react';
 
 export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
   const [activeSection, setActiveSection] = useState('');
@@ -26,7 +26,6 @@ export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
 
   useEffect(() => {
     handleScroll();
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {

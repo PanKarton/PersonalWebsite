@@ -7,7 +7,7 @@ export const StyledH1 = styled.h1`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  z-index: 2;
+  z-index: 3;
 
   .logo-wrapper {
     position: relative;

@@ -1,6 +1,4 @@
-import { HamburgerButton } from '@/components/atoms/HamburgerButton/HamburgerButton';
 import { NavLink } from '@/components/atoms/NavLink/NavLink';
-import { useState } from 'react';
 import { StyledList, StyledNav } from './Nav.styles';
 
 type NavProps = {
@@ -8,14 +6,9 @@ type NavProps = {
 };
 
 export const Nav = ({ activeSection }: NavProps) => {
-  const [isActive, setisActive] = useState(false);
-
-  const handleToggleNavMenu = () => setisActive(prev => !prev);
-
   return (
     <>
-      <HamburgerButton isActive={isActive} onClick={handleToggleNavMenu} />
-      <StyledNav className={isActive ? 'isActive' : ''}>
+      <StyledNav>
         <StyledList>
           <li>
             <NavLink href="#hello" isActive={activeSection === 'hello'}>
