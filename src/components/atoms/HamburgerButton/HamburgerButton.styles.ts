@@ -48,7 +48,7 @@ export const StyledBurger = styled.button`
     &.mid-line::before {
       content: '';
       position: absolute;
-      right: 0;
+      right: 0.5px;
       top: 50%;
       translate: 0 -50%;
       width: 1rem;
