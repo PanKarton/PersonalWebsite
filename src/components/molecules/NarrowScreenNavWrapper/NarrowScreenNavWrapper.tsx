@@ -1,11 +1,11 @@
 'use client';
 
-import { BackdropMenu } from '@/components/atoms/BackdropMenu/BackdropMenu';
+import { BackdropMenu } from '@/components/molecules/BackdropMenu/BackdropMenu';
 import { HamburgerButton } from '@/components/atoms/HamburgerButton/HamburgerButton';
 import { useState } from 'react';
 
 export const NarrowScreenNavWrapper = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   const handleToggleNavMenu = () => {
     setIsActive(prev => !prev);

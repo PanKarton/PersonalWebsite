@@ -6,30 +6,36 @@ type NavProps = {
 };
 
 export const Nav = ({ activeSection }: NavProps) => {
+  const sections = [
+    {
+      name: 'hello',
+      text: 'Home',
+    },
+    {
+      name: 'about-me',
+      text: 'About me',
+    },
+    {
+      name: 'my-projects',
+      text: 'My projects',
+    },
+    {
+      name: 'contact-me',
+      text: 'Contact me',
+    },
+  ];
+
   return (
     <>
       <StyledNav>
         <StyledList>
-          <li>
-            <NavLink href="#hello" isActive={activeSection === 'hello'}>
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#about-me" isActive={activeSection === 'about-me'}>
-              ABOUT ME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#my-projects" isActive={activeSection === 'my-projects'}>
-              MY PROJECTS
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#contact-me" isActive={activeSection === 'contact-me'}>
-              CONTACT ME
-            </NavLink>
-          </li>
+          {sections.map((section, index) => (
+            <li key={index}>
+              <NavLink href={`#${section.name}`} isActive={activeSection === section.name}>
+                {section.text}
+              </NavLink>
+            </li>
+          ))}
         </StyledList>
       </StyledNav>
     </>
