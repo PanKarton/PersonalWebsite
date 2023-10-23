@@ -33,7 +33,7 @@ export const StyledH1 = styled.h1`
   }
 
   @media screen and (min-width: 87.5rem) {
-    top: 1.5rem;
+    top: 1.125rem;
     gap: 0.75rem;
     .logo-wrapper {
       width: 3rem;

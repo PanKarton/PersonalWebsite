@@ -7,8 +7,10 @@ export const theme = {
     contrast: '#FFFFFF',
     contrastDarker: '#E0E2EA',
     contrastDarkerHover: '#f5f6f8',
+    contrastHighlyTransparent: '#FFFFFF20',
     // Orange
     accentPrimary: '#FFB969',
+    accentPrimarySlightlyDarker: '#FFB96950',
   },
   fontSize: {
     textXS: '0.75rem',
