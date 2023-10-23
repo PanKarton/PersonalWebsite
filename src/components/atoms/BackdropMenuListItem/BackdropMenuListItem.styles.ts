@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 import styled from 'styled-components';
 
-export const StyledMotionDiv = styled(motion.div)`
+export const StyledMotionAnchor = styled(motion.a)`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.color.contrastDarker};
@@ -13,7 +13,7 @@ export const StyledMotionDiv = styled(motion.div)`
     font-size: ${({ theme }) => theme.fontSize.textSM};
   }
 
-  a {
+  .text {
     margin-left: 3rem;
     display: block;
     font-size: ${({ theme }) => theme.fontSize.text4XL};

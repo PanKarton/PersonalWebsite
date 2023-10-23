@@ -1,18 +1,19 @@
 import { BackdropMenuListItem } from '@/components/atoms/BackdropMenuListItem/BackdropMenuListItem';
 import { AnimatePresence } from 'framer-motion';
-import { StyledList, StyledMotionDiv } from './BackdropMenu.styles';
+import { BackgroundText, StyledList, StyledMotionDiv } from './BackdropMenu.styles';
 
 const BackdropVariants = {
   hidden: { y: '-100%' },
   visible: { y: '0' },
-  exit: { y: '-100%', transition: { delay: 0.5 } },
+  exit: { y: '-100%' },
 };
 
 type BackdropMenuProps = {
   isActive: boolean;
+  handleToggleNavMenu: () => void;
 };
 
-export const BackdropMenu = ({ isActive }: BackdropMenuProps) => {
+export const BackdropMenu = ({ isActive, handleToggleNavMenu }: BackdropMenuProps) => {
   const sections = [
     {
       id: '#hello',
@@ -43,10 +44,15 @@ export const BackdropMenu = ({ isActive }: BackdropMenuProps) => {
           exit="exit"
           transition={{ ease: 'linear', duration: 0.3 }}
         >
+          <BackgroundText>MENU</BackgroundText>
           <StyledList>
             {sections.map((section, index) => (
               <li key={index}>
-                <BackdropMenuListItem index={index} section={section} />
+                <BackdropMenuListItem
+                  index={index}
+                  section={section}
+                  handleToggleNavMenu={handleToggleNavMenu}
+                />
               </li>
             ))}
           </StyledList>

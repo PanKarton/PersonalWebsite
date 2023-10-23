@@ -14,7 +14,7 @@ export const NarrowScreenNavWrapper = () => {
   return (
     <>
       <HamburgerButton isActive={isActive} onClick={handleToggleNavMenu} />
-      <BackdropMenu isActive={isActive} />
+      <BackdropMenu isActive={isActive} handleToggleNavMenu={handleToggleNavMenu} />
     </>
   );
 };
