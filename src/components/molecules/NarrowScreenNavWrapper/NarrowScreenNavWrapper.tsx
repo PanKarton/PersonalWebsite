@@ -14,7 +14,7 @@ export const StyledNavWrapper = styled.div`
   z-index: 2;
 
   @media screen and (min-width: 30.25rem) {
-    height: 5.5rem;
+    height: 5rem;
   }
 
   @media screen and (min-width: 75rem) {
