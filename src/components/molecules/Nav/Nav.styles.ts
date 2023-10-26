@@ -31,7 +31,7 @@ export const StyledList = styled.ul`
 export const BottomBorder = styled(motion.div)`
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   right: 0;
   height: 1px;
   background-color: ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
