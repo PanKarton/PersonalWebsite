@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledH1 = styled.h1`
   position: fixed;
-  top: 1rem;
+  top: 0.8125rem;
   left: 1rem;
   display: flex;
   align-items: center;
