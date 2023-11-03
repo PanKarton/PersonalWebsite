@@ -17,44 +17,62 @@ export const StyledBurger = styled.button`
   z-index: 11;
 
   @media screen and (min-width: 30.25rem) {
-    top: 1.75rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
   }
 
-  @media screen and (min-width: 87.5rem) {
+  @media screen and (min-width: 75rem) {
     display: none;
-    z-index: 10;
+  }
+
+  &.active {
+    span {
+      transition-delay: 0ms;
+      &.mid-line::after,
+      &.mid-line::before {
+        transition-delay: 200ms;
+      }
+    }
   }
 
   span {
     display: block;
     width: 2rem;
-    height: 0.25rem;
+    height: 0.125rem;
     background: ${({ theme }) => theme.color.contrast};
     border-radius: 0.625rem;
     position: relative;
-    transform-origin: 0.0625rem;
-    transition: all 0.125s linear;
+    transition: translate 125ms linear 200ms;
 
-    :nth-child(2) {
-      opacity: 1;
-      scale: 1 1;
+    &.mid-line::after,
+    &.mid-line::before {
+      content: '';
+      position: absolute;
+      right: 0.5px;
+      top: 50%;
+      translate: 0 -50%;
+      width: 1rem;
+      height: 0.125rem;
+      border-radius: 0.625rem;
+      background: ${({ theme }) => theme.color.contrast};
+      transform-origin: right center;
+      transition: rotate 125ms linear 0ms;
     }
   }
 
   &.active {
-    span:first-child {
+    .mid-line::after {
       rotate: 47deg;
     }
-
-    span:nth-child(2) {
-      opacity: 0;
-      translate: 25% 0;
-      scale: 0 1;
+    .mid-line::before {
+      rotate: -47deg;
+    }
+    span:first-child {
+      translate: 0 0.6875rem;
     }
 
     span:nth-child(3) {
-      rotate: -47deg;
+      translate: 0 -0.6875rem;
     }
   }
 `;

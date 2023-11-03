@@ -6,7 +6,7 @@ export const StyledWrapper = styled.div`
   right: clamp(2rem, 4vw, 4rem);
   display: flex;
   flex-direction: column;
-  z-index: 2;
+  z-index: 3;
 
   .icon-wrapper {
     position: absolute;

@@ -1,5 +1,6 @@
 'use client';
 import { MainLogo } from '@/components/atoms/MainLogo/MainLogo';
+import { NarrowScreenNavWrapper } from '@/components/molecules/NarrowScreenNavWrapper/NarrowScreenNavWrapper';
 import { Nav } from '@/components/molecules/Nav/Nav';
 import { useNavSpy } from '@/hooks/useNavSpy';
 import { GitHubLink } from '@/modules/MainPage/GitHubLink/GitHubLink';
@@ -20,6 +21,7 @@ const Page = () => {
     <div>
       <MainPageSectionsWrapper sectionsRefs={sectionsRefs} activeSection={activeSection} />
       <Nav activeSection={activeSection} />
+      <NarrowScreenNavWrapper />
       <MainLogo />
       <GitHubLink />
     </div>

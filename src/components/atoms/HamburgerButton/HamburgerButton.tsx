@@ -13,7 +13,7 @@ export const HamburgerButton = ({ onClick, isActive }: Props) => (
     className={isActive ? 'active' : ''}
   >
     <span />
-    <span />
+    <span className="mid-line" />
     <span />
   </StyledBurger>
 );

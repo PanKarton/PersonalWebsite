@@ -1,3 +1,5 @@
+'use client';
+
 import { Footer } from '@/components/atoms/Footer/Footer';
 import { SideAnchors } from '@/components/molecules/SideAnchors/SideAnchors';
 import { AboutMeSection } from '@/modules/MainPage/AboutMeSection/AboutMeSection';

@@ -26,7 +26,6 @@ export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
 
   useEffect(() => {
     handleScroll();
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -34,5 +33,5 @@ export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
     };
   }, [scrollPosition, sectionsRefs, handleScroll]);
 
-  return { activeSection };
+  return { activeSection, sectionsRefs };
 };

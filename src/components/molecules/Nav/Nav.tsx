@@ -1,6 +1,7 @@
-import { HamburgerButton } from '@/components/atoms/HamburgerButton/HamburgerButton';
+'use client';
+
+import { BottomAnimatedBorder } from '@/components/atoms/BottomAnimatedBorder/BottomAnimatedBorder';
 import { NavLink } from '@/components/atoms/NavLink/NavLink';
-import { useState } from 'react';
 import { StyledList, StyledNav } from './Nav.styles';
 
 type NavProps = {
@@ -8,36 +9,38 @@ type NavProps = {
 };
 
 export const Nav = ({ activeSection }: NavProps) => {
-  const [isActive, setisActive] = useState(false);
-
-  const handleToggleNavMenu = () => setisActive(prev => !prev);
+  const sections = [
+    {
+      name: 'hello',
+      text: 'Home',
+    },
+    {
+      name: 'about-me',
+      text: 'About me',
+    },
+    {
+      name: 'my-projects',
+      text: 'My projects',
+    },
+    {
+      name: 'contact-me',
+      text: 'Contact me',
+    },
+  ];
 
   return (
     <>
-      <HamburgerButton isActive={isActive} onClick={handleToggleNavMenu} />
-      <StyledNav className={isActive ? 'isActive' : ''}>
+      <StyledNav>
         <StyledList>
-          <li>
-            <NavLink href="#hello" isActive={activeSection === 'hello'}>
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#about-me" isActive={activeSection === 'about-me'}>
-              ABOUT ME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#my-projects" isActive={activeSection === 'my-projects'}>
-              MY PROJECTS
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href="#contact-me" isActive={activeSection === 'contact-me'}>
-              CONTACT ME
-            </NavLink>
-          </li>
+          {sections.map((section, index) => (
+            <li key={index}>
+              <NavLink href={`#${section.name}`} isActive={activeSection === section.name}>
+                {section.text}
+              </NavLink>
+            </li>
+          ))}
         </StyledList>
+        <BottomAnimatedBorder />
       </StyledNav>
     </>
   );

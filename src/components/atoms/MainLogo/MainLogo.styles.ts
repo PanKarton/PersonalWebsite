@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const StyledH1 = styled.h1`
   position: fixed;
-  top: 1rem;
+  top: 0.8125rem;
   left: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  z-index: 2;
+  z-index: 3;
 
   .logo-wrapper {
     position: relative;
@@ -22,24 +22,19 @@ export const StyledH1 = styled.h1`
   }
 
   @media screen and (min-width: 30.25rem) {
-    top: 1.5rem;
-    left: 2rem;
-    .logo-wrapper {
-      width: 2.5rem;
-    }
+    top: 1.25rem;
+    left: 1.5rem;
     span {
       font-size: ${({ theme }) => theme.fontSize.text2XL};
     }
   }
 
+  @media screen and (min-width: 75rem) {
+    top: 1.5625rem;
+    left: 1.5rem;
+  }
+
   @media screen and (min-width: 87.5rem) {
-    top: 1.5rem;
-    gap: 0.75rem;
-    .logo-wrapper {
-      width: 3rem;
-    }
-    span {
-      font-size: ${({ theme }) => theme.fontSize.text3XL};
-    }
+    left: 2rem;
   }
 `;
