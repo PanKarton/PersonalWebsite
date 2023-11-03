@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { RefObject, useCallback, useEffect, useState } from 'react';
 
 export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
   const [activeSection, setActiveSection] = useState('');
@@ -33,5 +33,5 @@ export const useNavSpy = (sectionsRefs: RefObject<HTMLElement>[]) => {
     };
   }, [scrollPosition, sectionsRefs, handleScroll]);
 
-  return { activeSection };
+  return { activeSection, sectionsRefs };
 };

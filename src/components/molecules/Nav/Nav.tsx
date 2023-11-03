@@ -1,7 +1,8 @@
+'use client';
+
 import { BottomAnimatedBorder } from '@/components/atoms/BottomAnimatedBorder/BottomAnimatedBorder';
 import { NavLink } from '@/components/atoms/NavLink/NavLink';
-import { AnimatePresence } from 'framer-motion';
-import { BottomBorder, StyledList, StyledNav } from './Nav.styles';
+import { StyledList, StyledNav } from './Nav.styles';
 
 type NavProps = {
   activeSection: string;
