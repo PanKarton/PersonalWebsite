@@ -7,7 +7,7 @@ import { MeDescriptionSection } from '@/modules/AboutMePage/MeDescriptionSection
 import { GitHubLink } from '@/modules/MainPage/GitHubLink/GitHubLink';
 
 const AboutMePage = () => (
-  <div>
+  <div style={{ position: 'relative' }}>
     <AboutMeSectionReversed />
     <MeDescriptionSection />
 
