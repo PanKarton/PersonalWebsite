@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section`
-  background-color: ${({ theme }) => theme.color.primary};
+type StyledSectionProps = {
+  isWhite?: boolean;
+};
+
+export const StyledSection = styled.section<StyledSectionProps>`
+  background-color: ${({ theme, isWhite }) =>
+    isWhite ? theme.color.contrast : theme.color.primary};
   display: flex;
   justify-content: center;
   .max-width-wrapper {
