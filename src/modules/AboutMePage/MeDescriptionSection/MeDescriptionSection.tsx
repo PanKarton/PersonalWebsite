@@ -1,32 +1,9 @@
-import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
 import Image from 'next/image';
 import mePicture from 'public/images/me-description-img.png';
-import styled from 'styled-components';
-
-export const ContentWrapper = styled.div`
-  padding-inline: clamp(1rem, 7vw, 3rem);
-  h2 {
-  }
-  h3 {
-  }
-  .flex-wrapper {
-    display: flex;
-  }
-
-  .description-wrapper {
-  }
-`;
-
-export const ImageWrapper = styled.div`
-  position: relative;
-  aspect-ratio: 1.33;
-  width: 30rem;
-`;
-
-export const Description = styled.p``;
+import { ContentWrapper, Description, ImageWrapper, StyledSection } from './MeDescription.styles';
 
 export const MeDescriptionSection = () => (
-  <MainPageSection isWhite>
+  <StyledSection>
     <ContentWrapper>
       <h2>WHO AM I</h2>
       <div className="flex-wrapper">
@@ -44,5 +21,5 @@ export const MeDescriptionSection = () => (
         </div>
       </div>
     </ContentWrapper>
-  </MainPageSection>
+  </StyledSection>
 );

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FlexWrapper = styled.div`
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-end;
   justify-content: center;
   gap: 4rem;
