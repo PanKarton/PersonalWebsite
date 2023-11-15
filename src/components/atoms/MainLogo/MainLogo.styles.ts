@@ -21,6 +21,17 @@ export const StyledH1 = styled.h1`
     font-weight: 400;
   }
 
+  &.colorReversed {
+    span {
+      /* color: ${({ theme }) => theme.color.primary}; */
+      color: black;
+    }
+
+    svg {
+      color: black;
+    }
+  }
+
   @media screen and (min-width: 30.25rem) {
     top: 1.25rem;
     left: 1.5rem;

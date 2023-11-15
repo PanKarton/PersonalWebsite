@@ -8,7 +8,7 @@ export const StyledSection = styled.section`
   &::after {
     content: '';
     position: absolute;
-    top: 4.75rem;
+    top: clamp(4.75rem, 7vw, 7.75rem);
     left: 0;
     background-color: ${({ theme }) => theme.color.primary};
     width: clamp(1.25rem, 4vw, 2rem);
@@ -41,11 +41,17 @@ export const ContentWrapper = styled.div`
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.text3XL};
     margin-block: clamp(4rem, 6vw, 7rem);
+    @media screen and (min-width: 75rem) {
+      font-size: ${({ theme }) => theme.fontSize.text4XL};
+    }
   }
 
   h3 {
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.text2XL};
+    @media screen and (min-width: 75rem) {
+      font-size: ${({ theme }) => theme.fontSize.text3XL};
+    }
   }
 
   .flex-wrapper {
@@ -73,5 +79,6 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Description = styled.p`
-  max-width: 30rem;
+  max-width: 28rem;
+  line-height: 1.4;
 `;

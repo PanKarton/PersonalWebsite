@@ -11,8 +11,15 @@ export const StyledAnchor = styled.a`
   }
 
   svg {
-    color: white;
+    color: ${({ theme }) => theme.color.contrast};
     font-size: 3rem;
+    transition: color 125ms ease-in-out;
+  }
+
+  &.colorReversed {
+    svg {
+      color: ${({ theme }) => theme.color.primary};
+    }
   }
 
   &:focus {

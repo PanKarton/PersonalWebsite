@@ -1,20 +1,25 @@
 'use client';
 
 import { MainLogo } from '@/components/atoms/MainLogo/MainLogo';
+import { useReverseColor } from '@/hooks/useReverseColor';
 import { AboutMeSectionReversed } from '@/modules/AboutMePage/AboutMeSectionReversed/AboutMeSectionReversed';
 import { BackArrowAnchor } from '@/modules/AboutMePage/BackArrowAnchor/BackArrowAnchor';
 import { MeDescriptionSection } from '@/modules/AboutMePage/MeDescriptionSection/MeDescriptionSection';
 import { GitHubLink } from '@/modules/MainPage/GitHubLink/GitHubLink';
-import { useState } from 'react';
+import { useRef } from 'react';
 
 const AboutMePage = () => {
+  const meDescriptionSectionRef = useRef<HTMLElement>(null);
+
+  const { isArrowColorReversed, isLogoColorReversed } = useReverseColor(meDescriptionSectionRef);
+
   return (
     <div style={{ position: 'relative' }}>
       <AboutMeSectionReversed />
-      <MeDescriptionSection />
+      <MeDescriptionSection ref={meDescriptionSectionRef} />
 
-      <BackArrowAnchor />
-      <MainLogo />
+      <BackArrowAnchor isColorReversed={isArrowColorReversed} />
+      <MainLogo isColorReversed={isLogoColorReversed} />
       <GitHubLink />
     </div>
   );
