@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import mePicture from 'public/images/me-description-img.png';
-import { ForwardedRef, forwardRef, RefObject } from 'react';
-import { ContentWrapper, Description, ImageWrapper, StyledSection } from './MeDescription.styles';
+import { ForwardedRef, forwardRef } from 'react';
+import {
+  ContentWrapper,
+  Description,
+  ImageWrapper,
+  StyledSection,
+} from './MeDescriptionSection.styles';
 
 export const MeDescriptionSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => (
   <StyledSection ref={ref}>

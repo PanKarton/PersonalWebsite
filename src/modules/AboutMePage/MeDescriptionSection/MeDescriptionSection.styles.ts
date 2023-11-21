@@ -8,7 +8,7 @@ export const StyledSection = styled.section`
   &::after {
     content: '';
     position: absolute;
-    top: clamp(4.75rem, 7vw, 7.75rem);
+    top: clamp(4.75rem, 7vw, 9rem);
     left: 0;
     background-color: ${({ theme }) => theme.color.primary};
     width: clamp(1.25rem, 4vw, 2rem);
@@ -44,13 +44,20 @@ export const ContentWrapper = styled.div`
     @media screen and (min-width: 75rem) {
       font-size: ${({ theme }) => theme.fontSize.text4XL};
     }
+    @media screen and (min-width: 110rem) {
+      font-size: ${({ theme }) => theme.fontSize.text5XL};
+    }
   }
 
   h3 {
+    line-height: 0.8;
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.text2XL};
     @media screen and (min-width: 75rem) {
       font-size: ${({ theme }) => theme.fontSize.text3XL};
+    }
+    @media screen and (min-width: 110rem) {
+      font-size: ${({ theme }) => theme.fontSize.text4XL};
     }
   }
 
@@ -63,22 +70,36 @@ export const ContentWrapper = styled.div`
       flex-direction: row;
       gap: clamp(4rem, 5vw, 7rem);
     }
+    @media screen and (min-width: 86.5rem) {
+      justify-content: space-between;
+    }
   }
 
   .description-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @media screen and (min-width: 86.5rem) {
+      width: calc(50% - 2rem);
+    }
+    @media screen and (min-width: 110rem) {
+      gap: 3.5rem;
+    }
   }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
   aspect-ratio: 1.33;
-  width: min(100%, 30rem);
+  width: min(100%, 35rem);
 `;
 
 export const Description = styled.p`
   max-width: 28rem;
   line-height: 1.4;
+
+  @media screen and (min-width: 110rem) {
+    font-size: ${({ theme }) => theme.fontSize.textLG};
+    line-height: 1.5;
+  }
 `;
