@@ -17,11 +17,11 @@ export const StyledWrapper = styled.div`
   }
 
   span {
-    font-size: ${({ theme }) => theme.fontSize.text3XL};
+    font-size: ${({ theme }) => theme.fontSize.text2XL};
+    text-align: center;
   }
 
   &:hover {
-    cursor: pointer;
     background-color: ${({ theme }) => theme.color.contrastDarkerHover};
   }
 `;

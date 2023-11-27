@@ -1,12 +1,10 @@
-import Image from 'next/image';
-import Logo from 'public/images/logo.svg';
 import { MainLogoSVG } from '../MainLogoSVG';
 import { StyledH1 } from './MainLogo.styles';
 
-export const MainLogo = ({ isColorReversed }: { isColorReversed: boolean }) => (
-  <StyledH1 className={isColorReversed ? 'colorReversed' : ''}>
+export const MainLogo = () => (
+  <StyledH1>
     <div className="logo-wrapper">
-      <MainLogoSVG isReversed={isColorReversed} />
+      <MainLogoSVG />
     </div>
     <span>PanKarton</span>
   </StyledH1>

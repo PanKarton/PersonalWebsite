@@ -4,26 +4,12 @@ export const StyledSvg = styled.svg`
   path {
     stroke: ${({ theme }) => theme.color.accentPrimary};
     fill: ${({ theme }) => theme.color.accentPrimary};
-    transition: all 125ms ease-in-out;
-  }
-
-  &.reversedColor {
-    path {
-      stroke: ${({ theme }) => theme.color.primary};
-      fill: ${({ theme }) => theme.color.primary};
-    }
   }
 `;
 
-export const MainLogoSVG = ({ isReversed }: { isReversed?: boolean }) => {
+export const MainLogoSVG = () => {
   return (
-    <StyledSvg
-      className={isReversed ? 'reversedColor' : ''}
-      xmlns="http://www.w3.org/2000/svg"
-      width={826}
-      height={948}
-      viewBox="0 0 619.5 711"
-    >
+    <StyledSvg xmlns="http://www.w3.org/2000/svg" width={826} height={948} viewBox="0 0 619.5 711">
       <defs>
         <clipPath id="a">
           <path d="M.184 161H447v403H.184Zm0 0" />
