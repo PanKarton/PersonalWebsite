@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import linkedInIcon from 'public/images/linkedin-icon.svg';
-import gitHub from 'public/images/gh-icon-white.svg';
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { DoubleLineDivider } from '@/components/atoms/DoubleLineDivider/DoubleLineDivider';
 import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading';
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
@@ -29,12 +28,12 @@ export const ContactMeSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) =
           <IconsWrapper>
             <div className="icon">
               <Link href="">
-                <Image src={linkedInIcon} alt="linkedIn icon" fill />
+                <FaLinkedin />
               </Link>
             </div>
             <div className="icon">
               <Link href="">
-                <Image src={gitHub} alt="icon" fill />
+                <FaGithub />
               </Link>
             </div>
           </IconsWrapper>

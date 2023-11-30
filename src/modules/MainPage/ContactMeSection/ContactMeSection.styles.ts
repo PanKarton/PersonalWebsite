@@ -51,14 +51,14 @@ export const IconsWrapper = styled.div`
     position: relative;
     width: 2rem;
     aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     a {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        font-size: 2.375rem;
+        color: ${({ theme }) => theme.color.contrast};
+      }
     }
   }
 `;

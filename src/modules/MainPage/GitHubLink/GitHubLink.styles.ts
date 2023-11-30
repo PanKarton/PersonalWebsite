@@ -6,15 +6,20 @@ export const StyledWrapper = styled.div`
   right: clamp(2rem, 4vw, 4rem);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   z-index: 3;
 
   .icon-wrapper {
-    position: absolute;
-    top: -3rem;
-    left: 50%;
-    translate: -50% 0;
     aspect-ratio: 1;
     width: 2rem;
+    display: grid;
+    place-items: center;
+    svg {
+      font-size: 2.25rem;
+      color: ${({ theme }) => theme.color.accentPrimary};
+      transition: color 250ms ease-in-out;
+    }
   }
 
   .vertical-line {
@@ -22,6 +27,7 @@ export const StyledWrapper = styled.div`
     height: 3rem;
     width: 0.25rem;
     background-color: ${({ theme }) => theme.color.accentPrimary};
+    transition: background-color 250ms ease-in-out;
   }
 
   @media screen and (min-width: 37.5rem) {
@@ -32,6 +38,15 @@ export const StyledWrapper = styled.div`
     .vertical-line {
       height: clamp(6rem, 15vw, 10rem);
       width: 0.25rem;
+    }
+  }
+
+  &.isColorReversed {
+    .vertical-line {
+      background-color: ${({ theme }) => theme.color.primary};
+    }
+    svg {
+      color: ${({ theme }) => theme.color.primary};
     }
   }
 `;

@@ -10,9 +10,15 @@ export const StyledH1 = styled.h1`
   z-index: 3;
 
   .logo-wrapper {
-    position: relative;
+    display: flex;
+    align-items: center;
     width: 2rem;
     aspect-ratio: 0.84;
+
+    svg {
+      max-height: 100%;
+      max-width: 100%;
+    }
   }
 
   span {

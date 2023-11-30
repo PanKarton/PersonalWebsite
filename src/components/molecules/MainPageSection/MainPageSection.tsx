@@ -3,7 +3,7 @@ import { StyledSection } from './MainPageSection.styles';
 
 type MainPageSectionProps = {
   children: ReactNode;
-  id: string;
+  id?: string;
 };
 
 export const MainPageSection = forwardRef(

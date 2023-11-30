@@ -39,6 +39,20 @@ export const StyledFooter = styled.footer`
       max-width: 93.75rem;
     }
   }
+
+  &.isColorReversed {
+    border-color: ${({ theme }) => theme.color.primary};
+    background-color: ${({ theme }) => theme.color.contrast};
+    color: ${({ theme }) => theme.color.primary};
+
+    a:focus {
+      border-color: ${({ theme }) => theme.color.primary};
+    }
+
+    a > svg {
+      color: ${({ theme }) => theme.color.primary};
+    }
+  }
 `;
 
 export const StyledIconsWrapper = styled.div`
