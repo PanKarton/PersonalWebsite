@@ -6,20 +6,17 @@ import { AboutMeSectionReversed } from '@/modules/AboutMePage/AboutMeSectionReve
 import { MeDescriptionSection } from '@/modules/AboutMePage/MeDescriptionSection/MeDescriptionSection';
 import { MySkillsSection } from '@/modules/AboutMePage/MySkillsSection/MySkillsSection';
 import { GitHubLink } from '@/modules/MainPage/GitHubLink/GitHubLink';
-import { useRef } from 'react';
 
 const AboutMePage = () => {
-  const meDescriptionSectionRef = useRef<HTMLElement>(null);
-
   return (
     <div style={{ position: 'relative' }}>
       <AboutMeSectionReversed />
-      <MeDescriptionSection ref={meDescriptionSectionRef} />
+      <MeDescriptionSection />
       <MySkillsSection />
       <Footer isColorReversed />
 
       <AboutMeLogoWrapper />
-      <GitHubLink />
+      <GitHubLink isAboutMePage />
     </div>
   );
 };

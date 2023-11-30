@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import mePicture from 'public/images/me-description-img.png';
-import { ForwardedRef, forwardRef } from 'react';
 import {
   ContentWrapper,
   Description,
@@ -8,8 +7,8 @@ import {
   StyledSection,
 } from './MeDescriptionSection.styles';
 
-export const MeDescriptionSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => (
-  <StyledSection ref={ref}>
+export const MeDescriptionSection = () => (
+  <StyledSection>
     <ContentWrapper>
       <h2>WHO AM I</h2>
       <div className="flex-wrapper">
@@ -28,6 +27,4 @@ export const MeDescriptionSection = forwardRef((_, ref: ForwardedRef<HTMLElement
       </div>
     </ContentWrapper>
   </StyledSection>
-));
-
-MeDescriptionSection.displayName = 'MeDescriptionSection';
+);
