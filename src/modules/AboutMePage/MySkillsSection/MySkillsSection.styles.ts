@@ -51,6 +51,7 @@ export const ContentWrapper = styled.div`
       }
     }
     p {
+      margin-top: 0.5rem;
       @media screen and (min-width: 75rem) {
         font-size: ${({ theme }) => theme.fontSize.textXL};
       }
@@ -66,17 +67,14 @@ export const StyledSkillsList = styled.ul`
   gap: 1rem;
 
   li {
-    flex-basis: 100%;
+    flex-basis: calc(50% - 0.5rem);
     @media screen and (min-width: 50rem) {
-      flex-basis: calc(50% - 0.5rem);
+      flex-basis: calc(33% - 0.6125rem);
     }
     @media screen and (min-width: 62.5rem) {
-      flex-basis: calc(33% - 0.5625rem);
-    }
-    @media screen and (min-width: 75rem) {
       flex-basis: calc(25% - 0.75rem);
     }
-    @media screen and (min-width: 87.5rem) {
+    @media screen and (min-width: 75rem) {
       flex-basis: calc(20% - 0.875rem);
     }
   }

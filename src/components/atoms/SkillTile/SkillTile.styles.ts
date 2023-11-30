@@ -8,7 +8,7 @@ export const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  padding-bottom: 1.25rem;
 
   .skill-icon {
     position: relative;
@@ -17,7 +17,7 @@ export const StyledWrapper = styled.div`
   }
 
   span {
-    font-size: ${({ theme }) => theme.fontSize.text2XL};
+    font-size: ${({ theme }) => theme.fontSize.textLG};
     text-align: center;
   }
 
