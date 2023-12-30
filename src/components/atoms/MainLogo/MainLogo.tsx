@@ -1,4 +1,4 @@
-import { MainLogoSVG } from '../MainLogoSVG';
+import { MainLogoSVG } from '../MainLogoSVG/MainLogoSVG';
 import { StyledH1 } from './MainLogo.styles';
 
 export const MainLogo = () => (

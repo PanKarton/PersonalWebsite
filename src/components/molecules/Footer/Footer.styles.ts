@@ -4,7 +4,7 @@ export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.accentPrimary};
   padding-block: 1.5rem;
-  border-top: 0.0625rem solid ${({ theme }) => theme.color.accentPrimary};
+  border-top: 0.0625rem solid ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
 
   .max-width-wrapper {
     padding-inline: clamp(1rem, 7vw, 3rem);
@@ -52,6 +52,13 @@ export const StyledFooter = styled.footer`
     a > svg {
       color: ${({ theme }) => theme.color.primary};
     }
+  }
+
+  &.isAbsolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 `;
 

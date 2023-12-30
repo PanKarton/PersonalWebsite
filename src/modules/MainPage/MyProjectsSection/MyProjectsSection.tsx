@@ -19,7 +19,7 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
         <StyledTextWrapper>
           <SectionHeading>Latest project</SectionHeading>
           <LShapeDivider />
-          <FrameLink href={'/my-projects'}>Show more</FrameLink>
+          <FrameLink href={'/projects'}>Show more</FrameLink>
         </StyledTextWrapper>
 
         <LastProjectWrapper>
