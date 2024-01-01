@@ -1,61 +1,9 @@
 import { SlopingLinesDivier } from '@/components/atoms/SlopingLinesDivider/SlopingLinesDivider';
-import styled from 'styled-components';
-
-export const StyledSection = styled.section`
-  position: relative;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.contrast};
-
-  display: grid;
-  grid-template-columns: 45% 1fr;
-
-  padding-top: 4rem;
-
-  @media screen and (min-width: 30.25rem) {
-    padding-top: 5rem;
-  }
-  @media screen and (min-width: 75rem) {
-    padding-top: 5.5rem;
-  }
-
-  * {
-    font-weight: 500;
-  }
-`;
-
-export const StyledVerticalLine = styled.span`
-  position: absolute;
-  top: 25%;
-  left: 45%;
-  translate: -50% 0;
-  height: 75%;
-  width: 0.0625rem;
-  background-color: ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
-`;
-
-export const StyledHeadingWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 10%;
-
-  .flex-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    h2 {
-      color: ${({ theme }) => theme.color.accentPrimary};
-      font-size: ${({ theme }) => theme.fontSize.text5XL};
-      margin-bottom: 0.25rem;
-    }
-    p {
-      margin-top: 1.5rem;
-      font-size: ${({ theme }) => theme.fontSize.textLG};
-      max-width: 45ch;
-      letter-spacing: 2px;
-    }
-  }
-`;
+import {
+  StyledHeadingWrapper,
+  StyledSection,
+  StyledVerticalLine,
+} from './ProjectsPageSection.styles';
 
 export const ProjectsPageSection = () => (
   <StyledSection>
@@ -72,7 +20,7 @@ export const ProjectsPageSection = () => (
 
     <StyledVerticalLine />
 
-    {/* <div>
+    <div>
       <ul>
         <li>
           <div>
@@ -101,6 +49,6 @@ export const ProjectsPageSection = () => (
           </div>
         </li>
       </ul>
-    </div> */}
+    </div>
   </StyledSection>
 );

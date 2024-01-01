@@ -4,12 +4,14 @@ import { ForwardedRef, forwardRef } from 'react';
 
 type FooterProps = {
   isColorReversed?: boolean;
-  isAbsolute?: boolean;
+  isProjectsPage?: boolean;
 };
 
 export const Footer = forwardRef(
-  ({ isColorReversed, isAbsolute }: FooterProps, ref: ForwardedRef<HTMLElement>) => {
-    const classes = `${isColorReversed ? 'isColorReversed' : ''} ${isAbsolute ? 'isAbsolute' : ''}`;
+  ({ isColorReversed, isProjectsPage }: FooterProps, ref: ForwardedRef<HTMLElement>) => {
+    const classes = `${isColorReversed ? 'isColorReversed' : ''} ${
+      isProjectsPage ? 'isProjectsPage' : ''
+    }`;
     return (
       <StyledFooter ref={ref} className={classes}>
         <div className="max-width-wrapper">

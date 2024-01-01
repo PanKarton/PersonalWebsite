@@ -54,10 +54,12 @@ export const StyledFooter = styled.footer`
     }
   }
 
-  &.isAbsolute {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  &.isProjectsPage {
+    @media screen and (min-width: 62.5rem) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
     right: 0;
   }
 `;

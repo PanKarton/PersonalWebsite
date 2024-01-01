@@ -11,7 +11,7 @@ const ProjectsPage = () => {
       <ProjectsPageSection />
 
       <SubPageLogoWrapper subPage="projects" />
-      <Footer isAbsolute />
+      <Footer isProjectsPage />
       <GitHubLink />
     </div>
   );
