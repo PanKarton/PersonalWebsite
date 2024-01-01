@@ -7,7 +7,7 @@ type SubPageLogoWrapper = {
 
 export const SubPageLogoWrapper = ({ subPage }: SubPageLogoWrapper) => (
   <StyledWrapper>
-    <a href={`/${subPage}`}>
+    <a href={`/#${subPage}`}>
       <MainLogo />
     </a>
     <span className="sub-page">{`/ ${subPage}`}</span>

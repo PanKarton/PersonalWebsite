@@ -1,4 +1,5 @@
 import { SlopingLinesDivier } from '@/components/atoms/SlopingLinesDivider/SlopingLinesDivider';
+import { ProjectsList } from '../ProjectsList/ProjectsList';
 import {
   StyledHeadingWrapper,
   StyledSection,
@@ -20,35 +21,8 @@ export const ProjectsPageSection = () => (
 
     <StyledVerticalLine />
 
-    <div>
-      <ul>
-        <li>
-          <div>
-            <span>img</span>
-            <h3>Krasnystaw City Nursery</h3>
-            <p>
-              A multi-page website connected to Strapi CMS, created for promotional purposes of the
-              nursery and communication with parents
-            </p>
-            <div>
-              <ul>
-                <li>
-                  <div>Next.js</div>
-                </li>
-                <li>
-                  <div>Strapi</div>
-                </li>
-                <li>
-                  <div>styled-components</div>
-                </li>
-                <li>
-                  <div>TypeScript</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      </ul>
+    <div className="project-list-wrapper">
+      <ProjectsList />
     </div>
   </StyledSection>
 );

@@ -15,8 +15,9 @@ export const StyledSection = styled.section`
   @media screen and (min-width: 62.5rem) {
     display: grid;
     grid-template-columns: 45% 1fr;
-    grid-template-columns: 45% 1fr;
+    padding-top: 5rem;
     height: 100vh;
+    overflow: hidden;
   }
 
   @media screen and (min-width: 75rem) {
@@ -25,6 +26,15 @@ export const StyledSection = styled.section`
 
   * {
     font-weight: 500;
+  }
+
+  .project-list-wrapper {
+    max-width: 24rem;
+    margin-inline: auto;
+
+    @media screen and (min-width: 62.5rem) {
+      padding-top: 6.5rem;
+    }
   }
 `;
 
@@ -53,6 +63,8 @@ export const StyledVerticalLine = styled.span`
 export const StyledHeadingWrapper = styled.div`
   display: flex;
   justify-content: center;
+  max-width: 40ch;
+  margin-inline: auto;
 
   .flex-wrapper {
     display: flex;
@@ -65,7 +77,6 @@ export const StyledHeadingWrapper = styled.div`
     p {
       margin-top: 1.5rem;
       font-size: ${({ theme }) => theme.fontSize.textBase};
-      max-width: 40ch;
       letter-spacing: 2px;
     }
     svg {
