@@ -29,11 +29,37 @@ export const StyledSection = styled.section`
   }
 
   .project-list-wrapper {
-    max-width: 24rem;
-    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
 
     @media screen and (min-width: 62.5rem) {
-      padding-top: 6.5rem;
+      max-width: 50rem;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3rem;
+        background: ${({ theme }) => theme.color.primary};
+        background: linear-gradient(
+          180deg,
+          ${({ theme }) => theme.color.primary} 0%,
+          transparent 77%
+        );
+        z-index: 1;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 1.125rem;
+        left: 0;
+        right: 0;
+        height: 3rem;
+        background: ${({ theme }) => theme.color.primary};
+        background: linear-gradient(0, ${({ theme }) => theme.color.primary} 0%, transparent 77%);
+      }
     }
   }
 `;
@@ -41,7 +67,7 @@ export const StyledSection = styled.section`
 export const StyledVerticalLine = styled.span`
   display: block;
   position: relative;
-  width: min(100%, 24rem);
+  width: min(calc(100% - 2rem), 22rem);
   height: 0.0625rem;
   left: 50%;
   translate: -50% 0;
@@ -51,7 +77,7 @@ export const StyledVerticalLine = styled.span`
 
   @media screen and (min-width: 62.5rem) {
     position: absolute;
-    top: 25%;
+    top: 13rem;
     left: 45%;
     translate: -50% 0;
     height: 75%;
@@ -65,6 +91,7 @@ export const StyledHeadingWrapper = styled.div`
   justify-content: center;
   max-width: 40ch;
   margin-inline: auto;
+  padding-inline: 1rem;
 
   .flex-wrapper {
     display: flex;

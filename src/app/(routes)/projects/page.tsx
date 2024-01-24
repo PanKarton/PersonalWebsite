@@ -9,8 +9,8 @@ const ProjectsPage = () => {
   return (
     <div style={{ position: 'relative' }}>
       <ProjectsPageSection />
-
       <SubPageLogoWrapper subPage="projects" />
+
       <Footer isProjectsPage />
       <GitHubLink />
     </div>
