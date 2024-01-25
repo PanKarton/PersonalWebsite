@@ -21,37 +21,33 @@ export const ProjectsList = () => {
       {
         projectMiniatureImg,
         projectName: 'Krasnystaw City Nursery',
-        projectDescription: `A multi-page website connected to Strapi CMS, created for promotional purposes of the
-        nursery and communication with parents`,
-        projectTechnologies: ['Next.js', 'Strapi', 'styled-components', 'TypeScript'],
-      },
-      {
-        projectMiniatureImg,
-        projectName: 'Krasnystaw City Nursery',
-        projectDescription: `A multi-page website connected to Strapi CMS, created for promotional purposes of the
-        nursery and communication with parents`,
-        projectTechnologies: ['Next.js', 'Strapi', 'styled-components', 'TypeScript'],
-      },
-      {
-        projectMiniatureImg,
-        projectName: 'Krasnystaw City Nursery',
-        projectDescription: `A multi-page website connected to Strapi CMS, created for promotional purposes of the
-        nursery and communication with parents`,
-        projectTechnologies: ['Next.js', 'Strapi', 'styled-components', 'TypeScript'],
-      },
-      {
-        projectMiniatureImg,
-        projectName: 'Krasnystaw City Nursery',
-        projectDescription: `A multi-page website connected to Strapi CMS, created for promotional purposes of the
-        nursery and communication with parents`,
-        projectTechnologies: ['Next.js', 'Strapi', 'styled-components', 'TypeScript'],
-      },
-      {
-        projectMiniatureImg,
-        projectName: 'Krasnystaw City Nursery',
-        projectDescription: `A multi-page website connected to Strapi CMS, created for promotional purposes of the
-        nursery and communication with parents`,
-        projectTechnologies: ['Next.js', 'Strapi', 'styled-components', 'TypeScript'],
+        projectDescription: {
+          short: `A multi-page website connected to Strapi CMS, created for promotional purposes of the
+          nursery and communication with parents`,
+          extended: [
+            `My first commercial project involved developing a website for a daycare center, marking a captivating experience in working for a real client. This undertaking equipped me with invaluable problem-solving skills inherent in larger projects, and taught me how to adapt to specific client requirements.`,
+
+            `Throughout the project, I configured the content management system, Strapi CMS, allowing easy content management for the daycare staff. Embracing this technology was pivotal in empowering the client to independently update the website's content.`,
+          ],
+        },
+
+        projectTechnologies: {
+          main: ['Next.js', 'Strapi', 'styled-components', 'TypeScript'],
+          all: [
+            'Next.js',
+            'Strapi',
+            'styled-components',
+            'TypeScript',
+            'Next.js',
+            'Strapi',
+            'styled-components',
+            'TypeScript',
+            'Next.js',
+            'Strapi',
+            'styled-components',
+            'TypeScript',
+          ],
+        },
       },
     ];
 
@@ -62,31 +58,11 @@ export const ProjectsList = () => {
     <>
       <StyledList>
         {projectsData &&
-          projectsData.map(
-            (
-              { projectName, projectDescription, projectMiniatureImg, projectTechnologies },
-              index
-            ) => (
-              <li
-                key={index}
-                onClick={() =>
-                  handleOpenModal({
-                    projectName,
-                    projectDescription,
-                    projectMiniatureImg,
-                    projectTechnologies,
-                  })
-                }
-              >
-                <ProjectTile
-                  projectName={projectName}
-                  projectDescription={projectDescription}
-                  projectMiniatureImg={projectMiniatureImg}
-                  projectTechnologies={projectTechnologies}
-                />
-              </li>
-            )
-          )}
+          projectsData.map((projectData, index) => (
+            <li key={index} onClick={() => handleOpenModal(projectData)}>
+              <ProjectTile projectData={projectData} />
+            </li>
+          ))}
       </StyledList>
       <Portal isOpen={isProjectModalOpen}>
         <ProjectDetailsModal projectDetails={currentProjectData} />
