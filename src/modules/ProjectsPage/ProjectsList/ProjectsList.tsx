@@ -16,6 +16,11 @@ export const ProjectsList = () => {
     setCurrentProjectData(projectData);
   };
 
+  const handleCloseModal = () => {
+    setIsProjectModalOpen(false);
+    setCurrentProjectData(null);
+  };
+
   useEffect(() => {
     const projects = [
       {
@@ -65,7 +70,10 @@ export const ProjectsList = () => {
           ))}
       </StyledList>
       <Portal isOpen={isProjectModalOpen}>
-        <ProjectDetailsModal projectDetails={currentProjectData} />
+        <ProjectDetailsModal
+          projectDetails={currentProjectData}
+          handleCloseModal={handleCloseModal}
+        />
       </Portal>
     </>
   );

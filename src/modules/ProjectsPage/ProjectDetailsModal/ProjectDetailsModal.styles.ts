@@ -1,25 +1,27 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40vw;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.contrastDarker};
-  overflow-y: scroll;
-
-  border-left: 2px solid ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
+  position: fixed;
+  inset: 0;
+  background-color: ${({ theme }) => theme.color.primaryTransparent};
   z-index: 99999;
+  display: flex;
+  justify-content: flex-end;
 
-  .flex-wrapper {
+  .content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding-block: 5.25rem;
     padding-inline: 7rem;
+    width: 40vw;
+
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.color.contrastDarker};
+    overflow-y: scroll;
+
+    border-left: 2px solid ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
 
     h4 {
       color: ${({ theme }) => theme.color.accentPrimary};
@@ -42,6 +44,7 @@ export const StyledWrapper = styled.div`
       width: 100%;
       aspect-ratio: 1.56;
       margin-bottom: 2rem;
+      flex-shrink: 0;
 
       &::after {
         position: absolute;
@@ -116,4 +119,17 @@ export const StyledTechTile = styled.div`
   border: 1px solid ${({ theme }) => theme.color.accentPrimary};
   border-radius: 999rem;
   padding: 0.375rem 0.75rem;
+`;
+
+export const StyledCloseButtonWrapper = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  font-size: 3.75rem;
+  color: ${({ theme }) => theme.color.contrast};
+
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.color.accentPrimary};
+  }
 `;

@@ -7,15 +7,22 @@ import {
   StyledTechList,
   StyledTechTile,
   StyledWrapper,
+  StyledCloseButtonWrapper,
 } from './ProjectDetailsModal.styles';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { useEffect } from 'react';
 
 type ProjectDetailsModalTypes = {
   projectDetails: ProjectDataProps | null;
+  handleCloseModal: () => void;
 };
 
-export const ProjectDetailsModal = ({ projectDetails }: ProjectDetailsModalTypes) => {
+export const ProjectDetailsModal = ({
+  projectDetails,
+  handleCloseModal,
+}: ProjectDetailsModalTypes) => {
   if (projectDetails === null) return null;
-  1;
+
   const {
     projectName,
     projectDescription: { extended: projectDescription },
@@ -23,9 +30,22 @@ export const ProjectDetailsModal = ({ projectDetails }: ProjectDetailsModalTypes
     projectTechnologies: { all: projectTechologies },
   } = projectDetails;
 
+  useEffect(() => {
+    const handleCloseModalByEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && e.type === 'keydown') {
+        handleCloseModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleCloseModalByEsc);
+
+    return () => window.removeEventListener('keydown', handleCloseModalByEsc);
+  }, []);
+  window;
+
   return (
-    <StyledWrapper>
-      <div className="flex-wrapper">
+    <StyledWrapper onClick={handleCloseModal}>
+      <div className="content-wrapper" onClick={e => e.stopPropagation()}>
         <h4>{projectName}</h4>
 
         <StyledLineDivier />
@@ -40,8 +60,8 @@ export const ProjectDetailsModal = ({ projectDetails }: ProjectDetailsModalTypes
         </StyledLinksWrapper>
 
         <div className="description-wrapper">
-          {projectDescription.map(paragraph => (
-            <p>{paragraph}</p>
+          {projectDescription.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
 
@@ -54,6 +74,10 @@ export const ProjectDetailsModal = ({ projectDetails }: ProjectDetailsModalTypes
             </li>
           ))}
         </StyledTechList>
+
+        <StyledCloseButtonWrapper onClick={handleCloseModal}>
+          <IoIosArrowRoundForward />
+        </StyledCloseButtonWrapper>
       </div>
     </StyledWrapper>
   );
