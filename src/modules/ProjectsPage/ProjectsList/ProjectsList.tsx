@@ -4,22 +4,13 @@ import projectMiniatureImg from 'public/images/project-miniature-1.png';
 import { useEffect, useState } from 'react';
 import { ProjectDetailsModal } from '../ProjectDetailsModal/ProjectDetailsModal';
 import { ProjectTile } from '../ProjectTile/ProjectTile';
+import { useProjectModal } from '../useProjectModal';
 import { StyledList } from './ProjectsList.styles';
 
 export const ProjectsList = () => {
   const [projectsData, setProjectsData] = useState<ProjectDataProps[]>([]);
-  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
-  const [currentProjectData, setCurrentProjectData] = useState<ProjectDataProps | null>(null);
-
-  const handleOpenModal = (projectData: ProjectDataProps) => {
-    setIsProjectModalOpen(true);
-    setCurrentProjectData(projectData);
-  };
-
-  const handleCloseModal = () => {
-    setIsProjectModalOpen(false);
-    setCurrentProjectData(null);
-  };
+  const { currentProjectData, handleCloseModal, handleOpenModal, isProjectModalOpen } =
+    useProjectModal();
 
   useEffect(() => {
     const projects = [
