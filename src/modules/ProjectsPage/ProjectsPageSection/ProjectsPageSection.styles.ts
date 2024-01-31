@@ -120,6 +120,9 @@ export const StyledHeadingWrapper = styled.div`
       }
       p {
         max-width: 45ch;
+        line-height: 150%;
+        letter-spacing: 1px;
+        color: ${({ theme }) => theme.color.contrastDarker};
       }
     }
   }

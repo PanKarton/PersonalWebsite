@@ -33,6 +33,11 @@ export const StyledProjectTile = styled.div`
     transition: border-color 125ms ease-in-out;
   }
 
+  p {
+    letter-spacing: 0.125rem;
+    color: ${({ theme }) => theme.color.contrastDarker};
+  }
+
   &::before {
     position: absolute;
     content: '';
@@ -67,4 +72,5 @@ export const StyledTechTile = styled.div`
   border: 1px solid ${({ theme }) => theme.color.accentPrimary};
   border-radius: 999rem;
   padding: 0.375rem 0.75rem;
+  color: ${({ theme }) => theme.color.contrastDarker};
 `;
