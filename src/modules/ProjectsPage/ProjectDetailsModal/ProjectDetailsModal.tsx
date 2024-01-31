@@ -39,7 +39,12 @@ export const ProjectDetailsModal = ({
 
     window.addEventListener('keydown', handleCloseModalByEsc);
 
-    return () => window.removeEventListener('keydown', handleCloseModalByEsc);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleCloseModalByEsc);
+      document.body.style.overflow = 'unset';
+    };
   }, []);
   window;
 

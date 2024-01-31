@@ -3,25 +3,60 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.div`
   position: fixed;
   inset: 0;
-  background-color: ${({ theme }) => theme.color.primaryTransparent};
+  background-color: ${({ theme }) => theme.color.primary};
   z-index: 99999;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 5rem;
+
+  @media screen and (min-width: 62.5rem) {
+    justify-content: flex-end;
+    background-color: ${({ theme }) => theme.color.primaryTransparent};
+  }
+
+  @media screen and (min-width: 75rem) {
+    margin-top: 5.5rem;
+  }
 
   .content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding-block: 5.25rem;
-    padding-inline: 7rem;
-    width: 40vw;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+    width: min(38rem, 100%);
 
     background-color: ${({ theme }) => theme.color.primary};
     color: ${({ theme }) => theme.color.contrastDarker};
     overflow-y: scroll;
 
-    border-left: 2px solid ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      height: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.color.primarySlightlyLighter};
+      height: 30vh;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.color.primaryLighter};
+      }
+    }
+
+    @media screen and (min-width: 32.5rem) {
+      padding-inline: 4rem;
+    }
+
+    @media screen and (min-width: 62.5rem) {
+      width: min(60vw, 45rem);
+      border-left: 2px solid ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
+      /* padding-block: 5.25rem; */
+      padding-inline: 7rem;
+    }
 
     h4 {
       color: ${({ theme }) => theme.color.accentPrimary};
@@ -43,7 +78,7 @@ export const StyledWrapper = styled.div`
       position: relative;
       width: 100%;
       aspect-ratio: 1.56;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       flex-shrink: 0;
 
       &::after {
@@ -90,7 +125,7 @@ export const StyledLinksWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 2.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 
   a {
     position: absolute;
@@ -102,8 +137,12 @@ export const StyledLinksWrapper = styled.div`
     }
 
     &:first-child {
-      right: 40%;
-      translate: 50% -50%;
+      left: 0;
+      right: auto;
+      @media screen and (min-width: 62.5rem) {
+        left: auto;
+        right: 10rem;
+      }
     }
   }
 `;
@@ -119,14 +158,29 @@ export const StyledTechTile = styled.div`
   border: 1px solid ${({ theme }) => theme.color.accentPrimary};
   border-radius: 999rem;
   padding: 0.375rem 0.75rem;
+  transition: background-color 125ms ease-in-out;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.accentPrimarySlightlyDarker};
+  }
 `;
 
 export const StyledCloseButtonWrapper = styled.div`
   position: absolute;
-  top: 1rem;
-  right: 3rem;
+  top: 0.25rem;
+  right: 0.5rem;
+  translate: 0 -100%;
   font-size: 3.75rem;
   color: ${({ theme }) => theme.color.contrast};
+
+  @media screen and (min-width: 30.25rem) {
+    top: 0.75rem;
+  }
+  @media screen and (min-width: 45rem) {
+    top: 1rem;
+    right: 2rem;
+    translate: 0 0;
+  }
 
   &:hover {
     cursor: pointer;

@@ -12,7 +12,6 @@ const ProjectsPage = () => {
       <SubPageLogoWrapper subPage="projects" />
 
       <Footer isProjectsPage />
-      <GitHubLink />
     </div>
   );
 };
