@@ -8,6 +8,7 @@ declare module 'styled-components' {
       primary: string;
       primarySlightlyLighter: string;
       primaryLighter: string;
+      primaryTransparent: string;
       contrast: string;
       contrastDarker: string;
       contrastDarkerHover: string;

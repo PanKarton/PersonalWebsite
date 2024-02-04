@@ -1,7 +1,7 @@
 'use client';
 
+import { SubPageLogoWrapper } from '@/components/atoms/SubPageLogoWrapper/SubPageLogoWrapper';
 import { Footer } from '@/components/molecules/Footer/Footer';
-import { AboutMeLogoWrapper } from '@/modules/AboutMePage/AboutMeLogoWrapper/AboutMeLogoWrapper';
 import { AboutMeSectionReversed } from '@/modules/AboutMePage/AboutMeSectionReversed/AboutMeSectionReversed';
 import { MeDescriptionSection } from '@/modules/AboutMePage/MeDescriptionSection/MeDescriptionSection';
 import { MySkillsSection } from '@/modules/AboutMePage/MySkillsSection/MySkillsSection';
@@ -15,7 +15,7 @@ const AboutMePage = () => {
       <MySkillsSection />
       <Footer isColorReversed />
 
-      <AboutMeLogoWrapper />
+      <SubPageLogoWrapper subPage="about-me" />
       <GitHubLink isAboutMePage />
     </div>
   );

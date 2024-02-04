@@ -3,6 +3,7 @@ export const theme = {
     primary: '#323239',
     primarySlightlyLighter: '#3b3b44',
     primaryLighter: '#a6a6bf',
+    primaryTransparent: '#32323999',
     // White
     contrast: '#FFFFFF',
     contrastDarker: '#E0E2EA',

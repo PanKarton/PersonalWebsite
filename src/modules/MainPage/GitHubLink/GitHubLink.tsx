@@ -7,6 +7,8 @@ type GitHubLinkProps = {
 };
 
 export const GitHubLink = ({ isAboutMePage }: GitHubLinkProps) => {
+  // isAboutMePage prop is basically for color reversing
+
   const URL = 'https://github.com/PanKarton';
   const ref = useRef<HTMLDivElement | null>(null);
   const [isColorReversed, setIsColorReversed] = useState(false);
