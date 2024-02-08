@@ -1,5 +1,5 @@
 import { SkillTile } from '@/components/atoms/SkillTile/SkillTile';
-import htmlIcon from 'public/images/html-skill-icon.svg';
+import htmlIcon from '../../../public/images/html-skill-icon.svg';
 import { ContentWrapper, StyledSection, StyledSkillsList } from './MySkillsSection.styles';
 
 export const MySkillsSection = () => {

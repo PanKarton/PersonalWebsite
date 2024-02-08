@@ -1,9 +1,9 @@
-import { ProjectDataProps } from '@/types/project';
+import { ProjectDataType } from '@/types/project';
 import Image from 'next/image';
 import { StyledProjectTile, StyledTechList, StyledTechTile } from './ProjectTile.styles';
 
 type ProjectTileProps = {
-  projectData: ProjectDataProps;
+  projectData: ProjectDataType;
 };
 
 export const ProjectTile = ({ projectData }: ProjectTileProps) => {

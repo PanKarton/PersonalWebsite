@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import mePicture from 'public/images/me-description-img.png';
+import mePicture from '../../../public/images/me-description-img.png';
 import {
   ContentWrapper,
   Description,

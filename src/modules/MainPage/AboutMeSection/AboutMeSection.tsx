@@ -4,8 +4,8 @@ import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading
 import { SectionParagraph } from '@/components/atoms/SectionParagraph/SectionParagraph';
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
 import Image from 'next/image';
-import bigImage from 'public/images/about-me-img-big.png';
-import smallImage from 'public/images/about-me-img-small.png';
+import bigImage from '../../../public/images/about-me-img-big.png';
+import smallImage from '../../../public/images/about-me-img-small.png';
 import { ForwardedRef, forwardRef } from 'react';
 import { FlexWrapper, StyledTextWrapper, StyledImagesWrapper } from './AboutMeSection.styles';
 

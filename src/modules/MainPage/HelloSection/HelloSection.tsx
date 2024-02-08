@@ -1,7 +1,7 @@
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
 import Image from 'next/image';
-import dotsSquare from 'public/images/dot-square.svg';
-import heroImg from 'public/images/hero-img.png';
+import dotsSquare from '../../../public/images/dot-square.svg';
+import heroImg from '../../../public/images/hero-img.png';
 import { LShapeDivider } from '@/components/atoms/LShapeDivider/LShapeDivider';
 import { DottedLine } from '@/modules/MainPage/DottedLine/DottedLine';
 

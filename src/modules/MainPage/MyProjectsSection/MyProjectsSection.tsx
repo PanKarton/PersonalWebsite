@@ -4,8 +4,8 @@ import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
 import Image from 'next/image';
 import { FlexWrapper, LastProjectWrapper, StyledTextWrapper } from './MyProjectsSection.styles';
-import projectImageURL from 'public/images/project-thumbnail.png';
-import projectDecoration from 'public/images/last-project-decoration.svg';
+import projectImageURL from '../../../public/images/project-thumbnail.png';
+import projectDecoration from '../../../public/images/last-project-decoration.svg';
 import { ForwardedRef, forwardRef } from 'react';
 
 export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {

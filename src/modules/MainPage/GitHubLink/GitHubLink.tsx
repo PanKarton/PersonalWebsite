@@ -28,7 +28,7 @@ export const GitHubLink = ({ isAboutMePage }: GitHubLinkProps) => {
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isAboutMePage]);
 
   return (
     <StyledWrapper className={isColorReversed ? 'isColorReversed' : ''} ref={ref}>
