@@ -17,15 +17,13 @@ export const ProjectsList = () => {
       const response = await fetch(buildURL('/api/projects'));
       const projects: ProjectDataType[] = await response.json();
 
-      console.log(projects);
-
       setProjectsData(projects);
     })();
   }, []);
 
   return (
     <>
-      {/* <StyledList>
+      <StyledList>
         {projectsData &&
           projectsData.map((projectData, index) => (
             <li key={index} onClick={() => handleOpenModal(projectData)}>
@@ -38,7 +36,7 @@ export const ProjectsList = () => {
           projectDetails={currentProjectData}
           handleCloseModal={handleCloseModal}
         />
-      </Portal> */}
+      </Portal>
     </>
   );
 };

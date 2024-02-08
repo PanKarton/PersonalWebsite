@@ -17,7 +17,7 @@ export const ProjectTile = ({ projectData }: ProjectTileProps) => {
   return (
     <StyledProjectTile>
       <div className="miniature-wrapper">
-        <Image src={projectMiniatureImg} alt="project-miniature" fill />
+        {!!projectMiniatureImg ?? <Image src={projectMiniatureImg} alt="project-miniature" fill />}
       </div>
       <h3>{projectName}</h3>
       <p>{projectDescription}</p>
