@@ -1,12 +1,8 @@
-import { connectMongoDbAtlas } from '@/lib/connectMongoDbAtlas';
-import { Project } from '@/models/projectModel';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    await connectMongoDbAtlas();
-
-    const data = await Project.find();
+    const data = { message: 'Data is empty' };
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
