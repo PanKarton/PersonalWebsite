@@ -8,7 +8,8 @@ export const StyledProjectTile = styled.div`
   max-width: 24rem;
 
   @media screen and (min-width: 62.5rem) {
-    max-width: 32rem;
+    max-width: none;
+    width: 32rem;
   }
 
   /* This prevents before pseudoelement from covering the content */
