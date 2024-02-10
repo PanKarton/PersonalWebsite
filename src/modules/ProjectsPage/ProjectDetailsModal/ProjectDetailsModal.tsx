@@ -1,4 +1,4 @@
-import { ProjectDataProps } from '@/types/project';
+import { ProjectDataType } from '@/types/project';
 import Image from 'next/image';
 import { FrameLink } from '@/components/atoms/FrameLink/FrameLink';
 import {
@@ -13,7 +13,7 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 import { useEffect } from 'react';
 
 type ProjectDetailsModalTypes = {
-  projectDetails: ProjectDataProps | null;
+  projectDetails: ProjectDataType | null;
   handleCloseModal: () => void;
 };
 
@@ -21,15 +21,6 @@ export const ProjectDetailsModal = ({
   projectDetails,
   handleCloseModal,
 }: ProjectDetailsModalTypes) => {
-  if (projectDetails === null) return null;
-
-  const {
-    projectName,
-    projectDescription: { extended: projectDescription },
-    projectMiniatureImg,
-    projectTechnologies: { all: projectTechologies },
-  } = projectDetails;
-
   useEffect(() => {
     const handleCloseModalByEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && e.type === 'keydown') {
@@ -45,8 +36,16 @@ export const ProjectDetailsModal = ({
       window.removeEventListener('keydown', handleCloseModalByEsc);
       document.body.style.overflow = 'unset';
     };
-  }, []);
-  window;
+  }, [handleCloseModal]);
+
+  if (projectDetails === null) return null;
+
+  const {
+    projectName,
+    projectDescription: { extended: projectDescription },
+    projectMiniatureImg,
+    projectTechnologies: { all: projectTechologies },
+  } = projectDetails;
 
   return (
     <StyledWrapper onClick={handleCloseModal}>
@@ -56,7 +55,9 @@ export const ProjectDetailsModal = ({
         <StyledLineDivier />
 
         <div className="miniature-wrapper">
-          <Image src={projectMiniatureImg} alt="project-miniature" fill />
+          {!!projectMiniatureImg ?? (
+            <Image src={projectMiniatureImg} alt="project-miniature" fill />
+          )}
         </div>
 
         <StyledLinksWrapper>
