@@ -55,9 +55,7 @@ export const ProjectDetailsModal = ({
         <StyledLineDivier />
 
         <div className="miniature-wrapper">
-          {!!projectMiniatureImgURL ?? (
-            <Image src={projectMiniatureImgURL} alt="project-miniature" fill />
-          )}
+          <Image src={projectMiniatureImgURL} alt="project-miniature" fill />
         </div>
 
         <StyledLinksWrapper>
