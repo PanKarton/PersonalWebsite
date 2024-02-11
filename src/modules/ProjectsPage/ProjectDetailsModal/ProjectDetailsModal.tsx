@@ -43,7 +43,7 @@ export const ProjectDetailsModal = ({
   const {
     projectName,
     projectDescription: { extended: projectDescription },
-    projectMiniatureImg,
+    projectMiniatureImgURL,
     projectTechnologies: { all: projectTechologies },
   } = projectDetails;
 
@@ -55,8 +55,8 @@ export const ProjectDetailsModal = ({
         <StyledLineDivier />
 
         <div className="miniature-wrapper">
-          {!!projectMiniatureImg ?? (
-            <Image src={projectMiniatureImg} alt="project-miniature" fill />
+          {!!projectMiniatureImgURL ?? (
+            <Image src={projectMiniatureImgURL} alt="project-miniature" fill />
           )}
         </div>
 

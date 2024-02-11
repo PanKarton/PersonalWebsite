@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/dist/shared/lib/get-img-props';
 
 export type ProjectDataType = {
-  projectMiniatureImg: string | StaticImageData;
+  projectMiniatureImgURL: string;
   projectName: string;
   projectDescription: {
     short: string;
