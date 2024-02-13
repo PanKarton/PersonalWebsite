@@ -10,14 +10,14 @@ export const ProjectTile = ({ projectData }: ProjectTileProps) => {
   const {
     projectName,
     projectDescription: { short: projectDescription },
-    projectMiniatureImg,
+    projectMiniatureImgURL,
     projectTechnologies: { main: projectTechnologies },
   } = projectData;
 
   return (
     <StyledProjectTile>
       <div className="miniature-wrapper">
-        {!!projectMiniatureImg ?? <Image src={projectMiniatureImg} alt="project-miniature" fill />}
+        <Image src={projectMiniatureImgURL} alt="project-miniature" fill />
       </div>
       <h3>{projectName}</h3>
       <p>{projectDescription}</p>
