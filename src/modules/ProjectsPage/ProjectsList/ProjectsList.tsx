@@ -16,7 +16,6 @@ export const ProjectsList = () => {
     (async () => {
       const response = await fetch(buildURL('/api/projects'));
       const projects: ProjectDataType[] = await response.json();
-      console.log(projects);
 
       setProjectsData(projects);
     })();
