@@ -1,4 +1,3 @@
-import { Portal } from '@/components/atoms/Portal/Portal';
 import { ProjectDataType } from '@/types/project';
 import { useEffect, useState } from 'react';
 import { ProjectDetailsModal } from '../ProjectDetailsModal/ProjectDetailsModal';
@@ -7,10 +6,12 @@ import { useProjectModal } from '../useProjectModal';
 import { StyledList } from './ProjectsList.styles';
 import { buildURL } from '@/helpers/buildURL';
 
+const MODAL_ANIMATION_TIME = 300;
+
 export const ProjectsList = () => {
   const [projectsData, setProjectsData] = useState<ProjectDataType[]>([]);
   const { currentProjectData, handleCloseModal, handleOpenModal, isProjectModalOpen } =
-    useProjectModal();
+    useProjectModal(MODAL_ANIMATION_TIME);
 
   useEffect(() => {
     (async () => {
@@ -31,12 +32,12 @@ export const ProjectsList = () => {
             </li>
           ))}
       </StyledList>
-      <Portal isOpen={isProjectModalOpen}>
-        <ProjectDetailsModal
-          projectDetails={currentProjectData}
-          handleCloseModal={handleCloseModal}
-        />
-      </Portal>
+      <ProjectDetailsModal
+        projectDetails={currentProjectData}
+        handleCloseModal={handleCloseModal}
+        isActive={isProjectModalOpen}
+        modalAnimationTime={MODAL_ANIMATION_TIME}
+      />
     </>
   );
 };

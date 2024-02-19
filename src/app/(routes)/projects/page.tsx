@@ -4,7 +4,7 @@ import { SubPageLogoWrapper } from '@/components/atoms/SubPageLogoWrapper/SubPag
 import { Footer } from '@/components/molecules/Footer/Footer';
 import { ProjectsPageSection } from '@/modules/ProjectsPage/ProjectsPageSection/ProjectsPageSection';
 
-const ProjectsPage = async () => {
+const ProjectsPage = () => {
   return (
     <div style={{ position: 'relative' }}>
       <ProjectsPageSection />
