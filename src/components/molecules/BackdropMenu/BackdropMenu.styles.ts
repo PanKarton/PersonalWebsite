@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 import styled from 'styled-components';
 
-export const StyledMotionDiv = styled(motion.nav)`
+export const StyledMotionNav = styled(motion.nav)`
   position: fixed;
   inset: 0;
   background-color: ${({ theme }) => theme.color.primary};

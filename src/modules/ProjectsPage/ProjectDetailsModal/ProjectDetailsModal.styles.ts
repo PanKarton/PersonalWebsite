@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+export const StyledMotionDiv = styled(motion.div)`
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+`;
 
 export const StyledWrapper = styled.div`
   position: fixed;
@@ -11,7 +18,8 @@ export const StyledWrapper = styled.div`
 
   @media screen and (min-width: 62.5rem) {
     justify-content: flex-end;
-    background-color: ${({ theme }) => theme.color.primaryTransparent};
+    /* background-color: ${({ theme }) => theme.color.primaryTransparent}; */
+    background-color: transparent;
   }
 
   @media screen and (min-width: 75rem) {

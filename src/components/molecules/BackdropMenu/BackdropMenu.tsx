@@ -1,6 +1,6 @@
 import { BackdropMenuListItem } from '@/components/atoms/BackdropMenuListItem/BackdropMenuListItem';
 import { AnimatePresence } from 'framer-motion';
-import { BackgroundText, StyledList, StyledMotionDiv } from './BackdropMenu.styles';
+import { BackgroundText, StyledList, StyledMotionNav } from './BackdropMenu.styles';
 
 const BackdropVariants = {
   hidden: { y: '-100%' },
@@ -36,7 +36,7 @@ export const BackdropMenu = ({ isActive, handleToggleNavMenu }: BackdropMenuProp
   return (
     <AnimatePresence mode="wait">
       {isActive && (
-        <StyledMotionDiv
+        <StyledMotionNav
           key="backdrop"
           variants={BackdropVariants}
           initial="hidden"
@@ -56,7 +56,7 @@ export const BackdropMenu = ({ isActive, handleToggleNavMenu }: BackdropMenuProp
               </li>
             ))}
           </StyledList>
-        </StyledMotionDiv>
+        </StyledMotionNav>
       )}
     </AnimatePresence>
   );
