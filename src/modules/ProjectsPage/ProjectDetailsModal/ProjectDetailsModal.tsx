@@ -11,7 +11,7 @@ import {
   StyledMotionDiv,
 } from './ProjectDetailsModal.styles';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 const BackdropVariants = {
@@ -28,11 +28,11 @@ type ProjectDetailsModalTypes = {
 };
 
 export const ProjectDetailsModal = ({ projectDetails, handleCloseModal, isActive, modalAnimationTime }: ProjectDetailsModalTypes) => {
-  const delayCloseModal = () => {
+  const delayCloseModal = useCallback(() => {
     setTimeout(() => {
       handleCloseModal();
     }, modalAnimationTime - 200);
-  };
+  }, []);
 
   useEffect(() => {
     const handleCloseModalByEsc = (e: KeyboardEvent) => {
@@ -49,7 +49,7 @@ export const ProjectDetailsModal = ({ projectDetails, handleCloseModal, isActive
       window.removeEventListener('keydown', handleCloseModalByEsc);
       document.body.style.overflow = 'unset';
     };
-  }, [handleCloseModal]);
+  }, [handleCloseModal, delayCloseModal]);
 
   if (projectDetails === null) return null;
 
