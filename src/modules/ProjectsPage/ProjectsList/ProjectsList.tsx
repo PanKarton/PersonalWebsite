@@ -13,7 +13,6 @@ export const ProjectsList = () => {
   const { currentProjectData, handleCloseModal, handleOpenModal, isProjectModalOpen } =
     useProjectModal(MODAL_ANIMATION_TIME);
 
-
   useEffect(() => {
     (async () => {
       const response = await fetch(buildURL('/api/projects'));
@@ -33,14 +32,12 @@ export const ProjectsList = () => {
             </li>
           ))}
       </StyledList>
-      {/* <Portal isOpen={isProjectModalOpen}> */}
       <ProjectDetailsModal
         projectDetails={currentProjectData}
         handleCloseModal={handleCloseModal}
         isActive={isProjectModalOpen}
         modalAnimationTime={MODAL_ANIMATION_TIME}
       />
-      {/* </Portal> */}
     </>
   );
 };
