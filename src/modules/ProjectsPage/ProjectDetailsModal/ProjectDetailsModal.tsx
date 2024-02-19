@@ -27,12 +27,7 @@ type ProjectDetailsModalTypes = {
   modalAnimationTime: number;
 };
 
-export const ProjectDetailsModal = ({
-  projectDetails,
-  handleCloseModal,
-  isActive,
-  modalAnimationTime,
-}: ProjectDetailsModalTypes) => {
+export const ProjectDetailsModal = ({ projectDetails, handleCloseModal, isActive, modalAnimationTime }: ProjectDetailsModalTypes) => {
   const delayCloseModal = () => {
     setTimeout(() => {
       handleCloseModal();
@@ -74,10 +69,9 @@ export const ProjectDetailsModal = ({
           initial="hidden"
           animate="visible"
           exit="exit"
-          transition={{ ease: 'linear', duration: modalAnimationTime / 1000 }}
-        >
+          transition={{ ease: 'linear', duration: modalAnimationTime / 1000 }}>
           <StyledWrapper onClick={delayCloseModal}>
-            <div className="content-wrapper" onClick={e => e.stopPropagation()}>
+            <div className="content-wrapper" onClick={(e) => e.stopPropagation()}>
               <h4>{projectName}</h4>
 
               <StyledLineDivier />
