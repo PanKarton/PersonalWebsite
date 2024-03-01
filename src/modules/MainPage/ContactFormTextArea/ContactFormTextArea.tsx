@@ -26,6 +26,14 @@ export const ContactFormTextArea = ({ register }: ContactFormInput) => {
             if (e.target.value) return;
             setIsFocused(false);
           },
+          required: {
+            value: true,
+            message: 'Come on, write something to me!',
+          },
+          maxLength: {
+            value: 200,
+            message: 'Reached the maximum message character limit of 200',
+          },
         })}
         onFocus={handleFocus}
       />

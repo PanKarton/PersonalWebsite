@@ -27,6 +27,10 @@ export const ContactFormInput = ({ register }: ContactFormInput) => {
             if (e.target.value) return;
             setIsFocused(false);
           },
+          maxLength: {
+            value: 52,
+            message: 'Reached the maximum email character limit of 52',
+          },
         })}
         onFocus={handleFocus}
       />
