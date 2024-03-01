@@ -26,8 +26,10 @@ export const ContactForm = () => {
     try {
       setTimeout(() => {
         setFormStatus('SUCCESS');
-        setFormStatus('');
       }, 3000);
+      setTimeout(() => {
+        setFormStatus('');
+      }, 6000);
     } catch (error) {
       setFormStatus('ERROR');
     }
@@ -50,8 +52,8 @@ export const ContactForm = () => {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <ContactFormInput register={register} />
       <ContactFormTextArea register={register} />
-      {/* <StyledSubmit disabled={isSubmitting}>{renderButtonState()}</StyledSubmit> */}
-      <StyledSubmit disabled={isSubmitting}>{<SpinningIcon />}</StyledSubmit>1
+      <StyledSubmit disabled={isSubmitting}>{renderButtonState()}</StyledSubmit>
+      {/* <StyledSubmit disabled={isSubmitting}>{<SpinningIcon />}</StyledSubmit> */}
       {errors.message && <StyledErrorMessage>{errors.message.message}</StyledErrorMessage>}
       {errors.email && <StyledErrorMessage>{errors.email.message}</StyledErrorMessage>}
     </StyledForm>

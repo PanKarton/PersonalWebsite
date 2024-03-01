@@ -24,8 +24,11 @@ export const StyledSubmit = styled.button`
   width: 10rem;
   margin-left: auto;
 
-  &:has(span, div) {
+  &:has(span) {
     padding: 0.75rem 2rem;
+  }
+  &:has(div) {
+    padding: 0.5625rem 2rem;
   }
 
   &::after {
@@ -41,6 +44,7 @@ export const StyledSubmit = styled.button`
     position: relative;
     translate: 0.125rem -0.125rem;
     font-size: ${({ theme }) => theme.fontSize.textBase};
+    color: ${({ theme }) => theme.color.contrastDarker};
   }
 
   svg {
@@ -50,6 +54,10 @@ export const StyledSubmit = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:hover > div {
+    translate: -0.125rem 0.125rem;
   }
 
   &:hover::after {
@@ -66,4 +74,5 @@ export const StyledSubmit = styled.button`
 
 export const StyledErrorMessage = styled.div`
   color: ${({ theme }) => theme.color.error};
+  text-align: right;
 `;
