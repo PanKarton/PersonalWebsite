@@ -58,7 +58,6 @@ export const ContactForm = () => {
       <ContactFormInput register={register} />
       <ContactFormTextArea register={register} />
       <StyledSubmit disabled={isSubmitting}>{renderButtonState()}</StyledSubmit>
-      {/* <StyledSubmit disabled={isSubmitting}>{<SpinningIcon />}</StyledSubmit> */}
       {errors.message && <StyledErrorMessage>{errors.message.message}</StyledErrorMessage>}
       {errors.email && <StyledErrorMessage>{errors.email.message}</StyledErrorMessage>}
       {formStatus === 'ERROR' && <StyledErrorMessage>{`Oops, something went wrong :(`}</StyledErrorMessage>}
