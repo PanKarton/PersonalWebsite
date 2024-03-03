@@ -8,24 +8,34 @@ import { ContactMeFormInputs } from '@/types/contact-me-form-inputs';
 import { useState } from 'react';
 import { SpinningIcon } from '@/components/atoms/SpinningIcon/SpinningIcon';
 import { AnimatedCheckmark } from '@/components/atoms/AnimatedCheckmark/AnimatedCheckmark';
+import { getEnvVariable } from '@/helpers/getEnvVariable';
+import emailjs from '@emailjs/browser';
 
 export const ContactForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<ContactMeFormInputs>({
     mode: 'onSubmit',
   });
   const [formStatus, setFormStatus] = useState<'SENDING' | 'SUCCESS' | 'ERROR' | ''>('');
 
-  const onSubmit: SubmitHandler<ContactMeFormInputs> = async () => {
+  const onSubmit: SubmitHandler<ContactMeFormInputs> = async (formData) => {
+    const emailjsServiceID = getEnvVariable(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+    const emailjsTemplateID = getEnvVariable(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+    const emailjsUserID = getEnvVariable(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+
     setFormStatus('SENDING');
     setTimeout(() => {
       setFormStatus('');
     }, 6000);
     try {
+      await emailjs.send(emailjsServiceID, emailjsTemplateID, formData, emailjsUserID);
+
       setFormStatus('SUCCESS');
+      reset();
     } catch (error) {
       console.log(error);
       setFormStatus('ERROR');
