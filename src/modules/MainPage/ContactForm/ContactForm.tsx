@@ -19,18 +19,15 @@ export const ContactForm = () => {
   });
   const [formStatus, setFormStatus] = useState<'SENDING' | 'SUCCESS' | 'ERROR' | ''>('');
 
-  console.log('formStatus', formStatus);
-
   const onSubmit: SubmitHandler<ContactMeFormInputs> = async () => {
     setFormStatus('SENDING');
+    setTimeout(() => {
+      setFormStatus('');
+    }, 6000);
     try {
-      setTimeout(() => {
-        setFormStatus('SUCCESS');
-      }, 3000);
-      setTimeout(() => {
-        setFormStatus('');
-      }, 6000);
+      setFormStatus('SUCCESS');
     } catch (error) {
+      console.log(error);
       setFormStatus('ERROR');
     }
   };
@@ -41,8 +38,6 @@ export const ContactForm = () => {
         return <SpinningIcon />;
       case 'SUCCESS':
         return <AnimatedCheckmark />;
-      case 'ERROR':
-        return <span>Error</span>;
       default:
         return <span>Send</span>;
     }
@@ -56,6 +51,7 @@ export const ContactForm = () => {
       {/* <StyledSubmit disabled={isSubmitting}>{<SpinningIcon />}</StyledSubmit> */}
       {errors.message && <StyledErrorMessage>{errors.message.message}</StyledErrorMessage>}
       {errors.email && <StyledErrorMessage>{errors.email.message}</StyledErrorMessage>}
+      {formStatus === 'ERROR' && <StyledErrorMessage>{`Oops, something went wrong :(`}</StyledErrorMessage>}
     </StyledForm>
   );
 };
