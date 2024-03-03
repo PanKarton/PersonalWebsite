@@ -17,12 +17,19 @@ export const StyledForm = styled.form`
 export const StyledSubmit = styled.button`
   position: relative;
   border: 0.0625rem solid ${({ theme }) => theme.color.accentPrimary};
-  padding: 0.75rem 2rem;
+  padding: 0.25rem 2rem;
   background-color: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.contrast};
   text-align: center;
   width: 10rem;
   margin-left: auto;
+
+  &:has(span) {
+    padding: 0.75rem 2rem;
+  }
+  &:has(div) {
+    padding: 0.5625rem 2rem;
+  }
 
   &::after {
     content: '';
@@ -33,14 +40,24 @@ export const StyledSubmit = styled.button`
     transition: translate 250ms;
   }
 
-  p {
+  span {
     position: relative;
     translate: 0.125rem -0.125rem;
     font-size: ${({ theme }) => theme.fontSize.textBase};
+    color: ${({ theme }) => theme.color.contrastDarker};
+  }
+
+  svg {
+    position: relative;
+    translate: -0.125rem -0.125rem;
   }
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:hover > div {
+    translate: -0.125rem 0.125rem;
   }
 
   &:hover::after {
@@ -49,12 +66,13 @@ export const StyledSubmit = styled.button`
 
   @media screen and (min-width: 25rem) {
     width: 14rem;
-
-    p {
-      font-size: ${({ theme }) => theme.fontSize.textLG};
-    }
     &::after {
       translate: 0.375rem -0.375rem;
     }
   }
+`;
+
+export const StyledErrorMessage = styled.div`
+  color: ${({ theme }) => theme.color.error};
+  text-align: right;
 `;

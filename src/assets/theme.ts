@@ -12,6 +12,8 @@ export const theme = {
     // Orange
     accentPrimary: '#FFB969',
     accentPrimarySlightlyDarker: '#FFB96950',
+    // Red
+    error: '#ED4337',
   },
   fontSize: {
     textXS: '0.75rem',

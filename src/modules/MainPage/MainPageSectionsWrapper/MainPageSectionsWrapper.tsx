@@ -15,10 +15,7 @@ type MainPageSectionsWrapperProps = {
   activeSection: string;
 };
 
-export const MainPageSectionsWrapper = ({
-  sectionsRefs,
-  activeSection,
-}: MainPageSectionsWrapperProps) => {
+export const MainPageSectionsWrapper = ({ sectionsRefs, activeSection }: MainPageSectionsWrapperProps) => {
   const sideAnchorsRef = useRef<HTMLUListElement>(null);
   const footerRef = useRef<HTMLElement>(null);
 
@@ -26,8 +23,8 @@ export const MainPageSectionsWrapper = ({
 
   return (
     <StyledWrapper>
-      <HelloSection ref={sectionsRefs[0]} />
-      <AboutMeSection ref={sectionsRefs[1]} />
+      {/* <HelloSection ref={sectionsRefs[0]} /> */}
+      {/* <AboutMeSection ref={sectionsRefs[1]} /> */}
       <MyProjectsSection ref={sectionsRefs[2]} />
       <ContactMeSection ref={sectionsRefs[3]} />
       <SideAnchors activeSection={activeSection} ref={sideAnchorsRef} />

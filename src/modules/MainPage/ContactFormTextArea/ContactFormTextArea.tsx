@@ -1,39 +1,41 @@
 import { useState } from 'react';
 import { StyledLabel, StyledTextArea, StyledWrapper } from './ContactFormTextArea.styles';
+import { UseFormRegister } from 'react-hook-form';
+import { ContactMeFormInputs } from '@/types/contact-me-form-inputs';
 
 type ContactFormInput = {
-  label: string;
-  id: string;
+  register: UseFormRegister<ContactMeFormInputs>;
 };
 
-export const ContactFormTextArea = ({ label, id }: ContactFormInput) => {
+export const ContactFormTextArea = ({ register }: ContactFormInput) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState('');
 
   const handleFocus = () => {
     setIsFocused(true);
   };
 
-  const handleBlur = () => {
-    if (inputValue) return;
-    setIsFocused(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInputValue(e.target.value);
-  };
-
   return (
     <StyledWrapper>
-      <StyledLabel htmlFor={id} className={isFocused ? 'label-float' : ''}>
-        {label}
+      <StyledLabel htmlFor={'message'} className={isFocused ? 'label-float' : ''}>
+        message
       </StyledLabel>
       <StyledTextArea
-        id={id}
+        id="message"
+        {...register('message', {
+          onBlur: (e) => {
+            if (e.target.value) return;
+            setIsFocused(false);
+          },
+          required: {
+            value: true,
+            message: 'Come on, write something to me!',
+          },
+          maxLength: {
+            value: 200,
+            message: 'Reached the maximum message character limit of 200',
+          },
+        })}
         onFocus={handleFocus}
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={inputValue}
       />
     </StyledWrapper>
   );
