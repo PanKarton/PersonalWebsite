@@ -23,8 +23,8 @@ export const MainPageSectionsWrapper = ({ sectionsRefs, activeSection }: MainPag
 
   return (
     <StyledWrapper>
-      {/* <HelloSection ref={sectionsRefs[0]} /> */}
-      {/* <AboutMeSection ref={sectionsRefs[1]} /> */}
+      <HelloSection ref={sectionsRefs[0]} />
+      <AboutMeSection ref={sectionsRefs[1]} />
       <MyProjectsSection ref={sectionsRefs[2]} />
       <ContactMeSection ref={sectionsRefs[3]} />
       <SideAnchors activeSection={activeSection} ref={sideAnchorsRef} />

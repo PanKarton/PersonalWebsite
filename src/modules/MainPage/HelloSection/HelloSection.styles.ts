@@ -103,7 +103,7 @@ export const HeroHeading = styled.h2`
 `;
 
 export const HeroImgWrapper = styled.div`
-  aspect-ratio: 1.2;
+  rotate: -90deg;
 
   div {
     position: relative;
@@ -113,13 +113,14 @@ export const HeroImgWrapper = styled.div`
       top: 50%;
       translate: 0 -50%;
       height: auto;
-      width: min(130%, 29rem);
-      aspect-ratio: 1.2;
+      aspect-ratio: 0.875;
+      width: min(100%, 29rem);
     }
     @media screen and (min-width: 65rem) {
       position: relative;
       margin-left: auto;
       width: 100%;
+      translate: 0 0;
     }
   }
   @media screen and (min-width: 50rem) {
