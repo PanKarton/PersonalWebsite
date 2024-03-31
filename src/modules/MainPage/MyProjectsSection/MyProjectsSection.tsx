@@ -4,14 +4,45 @@ import { SectionHeading } from '@/components/atoms/SectionHeading/SectionHeading
 import { MainPageSection } from '@/components/molecules/MainPageSection/MainPageSection';
 import Image from 'next/image';
 import { FlexWrapper, LastProjectWrapper, StyledTextWrapper } from './MyProjectsSection.styles';
-import projectImageURL from '../../../public/images/project-thumbnail.png';
 import projectDecoration from '../../../public/images/last-project-decoration.svg';
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
+import { buildURL } from '@/helpers/buildURL';
+import { ProjectDataType } from '@/types/project';
+
+const emptyProject: ProjectDataType = {
+  projectMiniatureImgURL: '',
+  projectName: '',
+  projectDescription: {
+    short: '',
+    extended: [],
+  },
+  projectTechnologies: {
+    main: [],
+    all: [],
+  },
+  URLs: {
+    gitHub: '',
+    live: '',
+  },
+};
 
 export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
-  const projectDescription =
-    'Multi page website made with Next.js and connected to Strapi CMS for city nusery.';
-  const projectURL = '';
+  const [latestProject, setLatestProject] = useState<ProjectDataType>(emptyProject);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(buildURL('/api/projects'));
+      const projects: ProjectDataType[] = await response.json();
+
+      setLatestProject(projects[0]);
+    })();
+  }, []);
+
+  const {
+    URLs: { live },
+    projectDescription,
+    projectMiniatureImgURL,
+  } = latestProject;
 
   return (
     <MainPageSection id="my-projects" ref={ref}>
@@ -28,10 +59,12 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
           </div>
           <div className="content-wrapper">
             <div className="img-wrapper">
-              <Image src={projectImageURL} alt="project thumbnail" fill />
+              <Image src={projectMiniatureImgURL} alt="project thumbnail" fill />
             </div>
-            <p className="project-description">{projectDescription}</p>
-            <a href={projectURL}>Live version</a>
+            <p className="project-description">{projectDescription.short}</p>
+            <a href={live} target="_blank">
+              Live version
+            </a>
           </div>
         </LastProjectWrapper>
       </FlexWrapper>
