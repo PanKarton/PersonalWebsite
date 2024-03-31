@@ -58,6 +58,7 @@ export const ProjectDetailsModal = ({ projectDetails, handleCloseModal, isActive
     projectDescription: { extended: projectDescription },
     projectMiniatureImgURL,
     projectTechnologies: { all: projectTechologies },
+    URLs: { live, gitHub },
   } = projectDetails;
 
   return (
@@ -81,8 +82,8 @@ export const ProjectDetailsModal = ({ projectDetails, handleCloseModal, isActive
               </div>
 
               <StyledLinksWrapper>
-                <FrameLink href="/">Live</FrameLink>
-                <FrameLink href="/">GitHub</FrameLink>
+                <FrameLink href={live}>Live</FrameLink>
+                <FrameLink href={gitHub}>GitHub</FrameLink>
               </StyledLinksWrapper>
 
               <div className="description-wrapper">

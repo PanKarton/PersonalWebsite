@@ -11,4 +11,8 @@ export type ProjectDataType = {
     main: string[];
     all: string[];
   };
+  URLs: {
+    live: string;
+    gitHub: string;
+  };
 };

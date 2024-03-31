@@ -20,6 +20,10 @@ const emptyProject: ProjectDataType = {
     main: [],
     all: [],
   },
+  URLs: {
+    gitHub: '',
+    live: '',
+  },
 };
 
 export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
@@ -33,6 +37,12 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
       setLatestProject(projects[0]);
     })();
   }, []);
+
+  const {
+    URLs: { live },
+    projectDescription,
+    projectMiniatureImgURL,
+  } = latestProject;
 
   return (
     <MainPageSection id="my-projects" ref={ref}>
@@ -49,10 +59,12 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
           </div>
           <div className="content-wrapper">
             <div className="img-wrapper">
-              <Image src={latestProject.projectMiniatureImgURL} alt="project thumbnail" fill />
+              <Image src={projectMiniatureImgURL} alt="project thumbnail" fill />
             </div>
-            <p className="project-description">{latestProject.projectDescription.short}</p>
-            <a href={''}>Live version</a>
+            <p className="project-description">{projectDescription.short}</p>
+            <a href={live} target="_blank">
+              Live version
+            </a>
           </div>
         </LastProjectWrapper>
       </FlexWrapper>
