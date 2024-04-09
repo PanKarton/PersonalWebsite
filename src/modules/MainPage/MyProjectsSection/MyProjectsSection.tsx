@@ -35,6 +35,8 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
       const projects: ProjectDataType[] = await response.json();
 
       setLatestProject(projects[0]);
+
+      console.log(projects[0]);
     })();
   }, []);
 

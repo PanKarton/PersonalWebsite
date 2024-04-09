@@ -1,6 +1,7 @@
 'use client';
 
 import { GlobalStyles } from '@/assets/globalStyles';
+import { PageLoader } from '@/components/molecules/PageLoader/PageLoader';
 import StyledComponentsRegistry from '@/lib/registry';
 import { AppProvider } from '@/providers/AppProvider';
 import { Courier_Prime } from 'next/font/google';
@@ -23,11 +24,12 @@ export const StyledBody = styled.body`
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <AppProvider>
-      <html>
+      <html style={{ position: 'relative' }}>
         <StyledBody suppressHydrationWarning={true} className={courierPrime.className}>
           <StyledComponentsRegistry>
             <GlobalStyles />
-            {children}
+            <PageLoader />
+            <>{children}</>
           </StyledComponentsRegistry>
         </StyledBody>
       </html>
