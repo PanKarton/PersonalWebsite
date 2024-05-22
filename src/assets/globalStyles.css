@@ -1,0 +1,66 @@
+:root {
+  --primary: #323239;
+  --secondary: #ffb969;
+}
+
+body {
+  overflow-y: hidden;
+  animation: body-show-scroll 1ms forwards;
+  animation-delay: 3500ms;
+}
+
+@keyframes body-show-scroll {
+  0% {
+    overflow-y: hidden;
+  }
+  50% {
+    overflow-y: scroll;
+  }
+  100% {
+    overflow-y: scroll;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--open-sans);
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Custom scrollbar */
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 0.5rem;
+}
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}

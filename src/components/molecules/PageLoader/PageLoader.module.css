@@ -1,98 +1,291 @@
 .loaderWrapper {
   /* Variables */
   --accent: #ffb969;
-  --width-base: 6rem;
+  --accentDarker: #997651;
+  --base: 6rem;
+  --primary: #323239;
+  --border-width: 4px;
+  --animation-time-base: 500ms;
 
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
 
-  background-color: #303030;
+  overflow: hidden;
 }
 
-.shapeWrapper {
-  position: relative;
-  /* border: 1px solid wheat; */
+/* courtains */
 
-  aspect-ratio: 1.42;
-  width: var(--width-base);
+.curtainWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.curtainLeft,
+.curtainRight {
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.curtainLeft {
+  left: 0;
+  animation: courtLeft calc(2 * var(--animation-time-base)) ease-in forwards;
+  animation-delay: calc(5.5 * var(--animation-time-base));
+}
+
+.curtainRight {
+  right: 0;
+  animation: courtRight calc(2 * var(--animation-time-base)) ease-in forwards;
+  animation-delay: calc(5.5 * var(--animation-time-base));
+}
+
+.curtainLeftSecond,
+.curtainRightSecond {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background-color: var(--accentDarker);
+}
+
+.curtainLeftSecond {
+  left: 0;
+  animation: courtLeftSecond calc(2 * var(--animation-time-base)) ease-in forwards;
+  animation-delay: calc(5.8 * var(--animation-time-base));
+}
+
+.curtainRightSecond {
+  left: 50%;
+  animation: courtRightSecond calc(2 * var(--animation-time-base)) ease-in forwards;
+  animation-delay: calc(5.8 * var(--animation-time-base));
+}
+
+/* THE BOX */
+
+.box {
+  position: relative;
+  width: var(--base);
+  height: var(--base);
+  transform-style: preserve-3d;
+  transform: rotateX(-40deg) rotateY(45deg);
+
+  animation: boxFadeOut calc(2 * var(--animation-time-base)) ease-in forwards;
+  animation-delay: calc(5 * var(--animation-time-base));
 }
 
 /* Walls */
 
 .wall {
   position: absolute;
-  border: 0.125rem solid var(--accent);
-  width: calc(var(--width-base) / 2);
-  height: calc(var(--width-base) / 2.4);
-  background-color: #303030;
+  width: 100%;
+  height: 80%;
+  border: var(--border-width) solid var(--accent);
+  box-sizing: border-box;
+  background-color: var(--primary);
+  transform-style: preserve-3d;
+}
+
+.wall::before {
+  position: absolute;
+  content: '';
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  right: calc(-1 * var(--border-width));
+  height: 70%;
+  border: var(--border-width) solid var(--accent);
+  background-color: var(--primary);
+  translate: 0 -100%;
+  transform-origin: bottom center;
 }
 
 .rightBottomWall {
-  left: 50%;
-  translate: 1px 0;
-  bottom: 0;
-  transform: skew(0deg, -30deg);
-}
-
-.leftBottomWall {
-  left: 1px;
-  bottom: 0rem;
-  transform: skew(0deg, 30deg);
+  transform: rotateY(180deg) translateZ(calc(-1 * var(--base) / 2));
 }
 
 .leftTopWall {
-  left: 1px;
-  top: 0;
-  transform: skew(0deg, -30deg);
+  transform: translateZ(calc(-1 * var(--base) / 2));
+}
+
+.leftBottomWall {
+  transform: rotateY(-90deg) translateZ(calc(var(--base) / 2));
 }
 
 .rightTopWall {
-  left: 50%;
-  translate: 1px 0;
-  top: 0;
-  transform: skew(0deg, 30deg);
+  transform: rotateY(90deg) translateZ(calc(var(--base) / 2));
 }
 
-/* Flaps */
-
-.flap {
-  position: absolute;
-  border: 0.125rem solid var(--accent);
-  width: calc(var(--width-base) / 2);
-  height: calc(var(--width-base) / 5);
-  background-color: #303030;
+.wall.leftBottomWall::before {
+  transform: rotateX(90deg);
+  animation: flopFour calc(2 * var(--animation-time-base));
+  animation-fill-mode: forwards;
+  animation-delay: calc(4 * var(--animation-time-base));
 }
 
-.rightTopFlap {
-  left: 50%;
-  translate: 0.5625rem 0;
-  top: -1.125rem;
-  transform: skew(-45deg, 30deg);
+.wall.rightTopWall::before {
+  transform: rotateX(90deg);
+  animation: flopThree calc(2 * var(--animation-time-base));
+  animation-fill-mode: forwards;
+  animation-delay: calc(3 * var(--animation-time-base));
 }
 
-.leftTopFlap {
-  left: 0;
-  translate: -0.5rem 0;
-  top: -1.125rem;
-  transform: skew(45deg, -30deg);
+.wall.rightBottomWall::before {
+  transform: rotateX(-90deg);
+  animation: flopTwo calc(2 * var(--animation-time-base));
+  animation-fill-mode: forwards;
+  animation-delay: calc(2 * var(--animation-time-base));
+}
+.wall.leftTopWall::before {
+  transform: rotateX(-90deg);
+  animation: flopOne calc(2 * var(--animation-time-base));
+  animation-fill-mode: forwards;
+  animation-delay: calc(1 * var(--animation-time-base));
+  /* animation-delay: var(--animation-time-base); */
 }
 
-.leftBottomFlap {
-  left: 0;
-  translate: -0.5rem 0;
-  bottom: 1.375rem;
-  transform: skew(-45deg, 30deg);
+@keyframes flopFour {
+  0% {
+    transform: rotateX(90deg);
+    height: 70%;
+  }
+
+  50% {
+    height: 55%;
+    transform: rotateX(-125deg);
+  }
+
+  100% {
+    height: 55%;
+    transform: rotateX(-125deg);
+  }
 }
 
-.rightBottomFlap {
-  left: 50%;
-  translate: 0.5625rem 0;
-  bottom: 1.375rem;
-  transform: skew(45deg, -30deg);
+@keyframes flopThree {
+  0% {
+    transform: rotateX(90deg);
+    height: 70%;
+  }
+
+  50% {
+    height: 55%;
+    transform: rotateX(-80deg);
+  }
+
+  100% {
+    height: 55%;
+    transform: rotateX(-80deg);
+  }
+}
+
+@keyframes flopTwo {
+  0% {
+    transform: rotateX(-90deg);
+    height: 70%;
+  }
+
+  50% {
+    height: 55%;
+    transform: rotateX(125deg);
+  }
+
+  100% {
+    height: 55%;
+    transform: rotateX(125deg);
+  }
+}
+
+@keyframes flopOne {
+  0% {
+    transform: rotateX(-90deg);
+    height: 70%;
+  }
+
+  50% {
+    height: 55%;
+    transform: rotateX(80deg);
+  }
+
+  100% {
+    height: 55%;
+    transform: rotateX(80deg);
+  }
+}
+
+@keyframes boxFadeOut {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -100vh;
+  }
+  100% {
+    translate: 0 -100vh;
+  }
+}
+
+/* Courtains animations */
+
+@keyframes courtLeft {
+  0% {
+    translate: 0 0;
+    scale: 1 1;
+  }
+
+  50% {
+    translate: -100% 0;
+    scale: 0 1;
+  }
+  100% {
+    translate: -100% 0;
+    scale: 0 1;
+  }
+}
+
+@keyframes courtRight {
+  0% {
+    translate: 0 0;
+    scale: 1 1;
+  }
+
+  50% {
+    translate: 100% 0;
+    scale: 0 1;
+  }
+  100% {
+    translate: 100% 0;
+    scale: 0 1;
+  }
+}
+
+@keyframes courtLeftSecond {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: -100% 0;
+  }
+  100% {
+    translate: -100% 0;
+  }
+}
+
+@keyframes courtRightSecond {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 100% 0;
+  }
+  100% {
+    translate: 100% 0;
+  }
 }

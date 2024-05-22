@@ -41,7 +41,7 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
   }, []);
 
   const {
-    URLs: { live },
+    URLs: { live, gitHub },
     projectDescription,
     projectMiniatureImgURL,
   } = latestProject;
@@ -60,13 +60,16 @@ export const MyProjectsSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) 
             <Image src={projectDecoration} alt="yellow wavy shapes" fill />
           </div>
           <div className="content-wrapper">
-            <div className="img-wrapper">
-              <Image src={projectMiniatureImgURL} alt="project thumbnail" fill />
-            </div>
+            <div className="img-wrapper">{projectMiniatureImgURL && <Image src={projectMiniatureImgURL} alt="project thumbnail" fill />}</div>
             <p className="project-description">{projectDescription.short}</p>
-            <a href={live} target="_blank">
-              Live version
-            </a>
+            <div className="links-wrapper">
+              <a href={live} target="_blank">
+                Live version
+              </a>
+              <a href={gitHub} target="_blank">
+                GitHub
+              </a>
+            </div>
           </div>
         </LastProjectWrapper>
       </FlexWrapper>
