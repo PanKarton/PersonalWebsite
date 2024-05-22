@@ -63,19 +63,38 @@ export const LastProjectWrapper = styled.div`
 
     .project-description {
       color: ${({ theme }) => theme.color.contrast};
-      margin-top: 0.75rem;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    .links-wrapper {
+      display: flex;
+      gap: 2rem;
+      margin-block: 0.5rem;
     }
 
     a {
       display: block;
       color: ${({ theme }) => theme.color.accentPrimary};
       margin-top: 1rem;
+      &:hover {
+        color: ${({ theme }) => theme.color.accentPrimarySlightlyLighter};
+      }
     }
     @media screen and (min-width: 87.5rem) {
+      padding-bottom: 2rem;
+
       .project-description {
         margin-top: 1.25rem;
         font-size: ${({ theme }) => theme.fontSize.textXL};
+        text-align: justify;
       }
+
+      .links-wrapper {
+        margin-block: 0;
+        gap: 4rem;
+      }
+
       a {
         margin-top: 2rem;
         font-size: ${({ theme }) => theme.fontSize.textXL};

@@ -15,6 +15,7 @@ declare module 'styled-components' {
       contrastHighlyTransparent: string;
       accentPrimary: string;
       accentPrimarySlightlyDarker: string;
+      accentPrimarySlightlyLighter: string;
       error: string;
     };
     fontSize: {

@@ -12,6 +12,7 @@ export const theme = {
     // Orange
     accentPrimary: '#FFB969',
     accentPrimarySlightlyDarker: '#FFB96950',
+    accentPrimarySlightlyLighter: '#FFC787',
     // Red
     error: '#ED4337',
   },

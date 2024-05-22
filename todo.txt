@@ -1,0 +1,17 @@
+0. dodac link do gh w latest project na glownej stronie
+1. /projects loader do listy
+2. gh logo w rogu na active i hover
+3. ikonki technologii w /about-me
+4. preloader tylko za pierwszym razem 
+5. ubogadzić preloader, zeby pudlo nie bylo takie łyse
+6. Zrobic zdjecia xD
+7. Live version link w /home nie ma active jak reszta
+8. ikonki w #contact-me na /home nie mają active ani hovera
+9. submit nie ma active
+10. gh w rogu nie ma active
+11. ikonki w footer na /about-me są pomaranczowe, a nie szare
+12. body dostaje scroll po 3500ms nawet na podstronach
+13. powrot do /home na /about-me nie ma active ani hovera
+14. nie idzie odpalic modala za pomocą klawiatury na /my-projects
+15. na produkcji z buildURL idzie localhost
+
